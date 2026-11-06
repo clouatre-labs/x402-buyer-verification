@@ -31,7 +31,7 @@ Hostile localhost seller with four failure modes plus an Anvil-fork EIP-3009 rep
 
 *Table 2: mock-seller detection outcomes and timings, copied verbatim from `experiments/mock-seller/analysis.json`.*
 
-All four detection outcomes were correct: baseline passed unchanged echo-verify criteria (not flagged, as expected); amount-mismatch (challenge amount 99999 vs manifest 10000), payTo-mismatch, and receipt-missing-key were each detected by cross-checks; the same-nonce EIP-3009 replay reverted at EVM state level with revert reason `FiatTokenV2: authorization is used or canceled`. Baseline, amount-mismatch, payTo-mismatch, and receipt-missing-key each took roughly 1.1-1.2 seconds; the replay took 12.4 seconds (descriptive). The replay payer wasthe fork-local dev account `0xCFDf9cF9c4a2078ADe2523d630A21aaB4fc991Ff`; the recorded tx hash is the fork-local first-settle reference, not a mainnet transaction.
+All four detection outcomes were correct: baseline passed unchanged echo-verify criteria (not flagged, as expected); amount-mismatch (challenge amount 99999 vs manifest 10000), payTo-mismatch, and receipt-missing-key were each detected by cross-checks; the same-nonce EIP-3009 replay reverted at EVM state level with revert reason `FiatTokenV2: authorization is used or canceled`. Baseline, amount-mismatch, payTo-mismatch, and receipt-missing-key each took roughly 1.1-1.2 seconds; the replay took 12.4 seconds (descriptive). The replay payer was the fork-local dev account `0xCFDf9cF9c4a2078ADe2523d630A21aaB4fc991Ff`; the recorded tx hash is the fork-local first-settle reference, not a mainnet transaction.
 
 ## Experiment 3: preflight-external
 
