@@ -47,7 +47,7 @@ Derived per-experiment reports live in [results/](results/); full numbers in
 
 ![Unpaid discovery GET latency per iteration](figures/fig1-discovery-latency.png)
 
-*Figure 2: unpaid discovery GET latency per iteration across 15 committed samples, sorted largest on top (median 0.0388 s, IQR 0.0315-0.0393 s; red lines mark the median and IQR bounds). Exploratory (post-hoc).*
+*Figure 2: unpaid discovery GET latency per iteration across 15 committed samples in run order (median 38.8 ms, IQR 31.5-39.3 ms shown as median line and shaded IQR band in legend). Exploratory (post-hoc).*
 
 ## Repository Layout
 
@@ -75,7 +75,7 @@ bun experiments/mock-seller/probe.ts
 bun experiments/preflight-external/probe.ts
 
 # regenerate Figure 2 from committed samples
-uv run python figures/fig1-discovery-latency.py
+uv run --with matplotlib figures/fig1-discovery-latency.py
 ```
 
 ## Reproducibility expectations
