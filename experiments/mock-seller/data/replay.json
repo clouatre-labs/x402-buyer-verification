@@ -1,0 +1,12 @@
+{
+  "mode": "replay",
+  "anvil_fork_block": 54035433,
+  "dev_payer": "0xCFDf9cF9c4a2078ADe2523d630A21aaB4fc991Ff",
+  "funded_usdc_base_units": "100000000000",
+  "first_settle_status": "success",
+  "first_settle_error": null,
+  "second_settle_status": null,
+  "second_settle_error": "ContractFunctionExecutionError: The contract function \"transferWithAuthorization\" reverted with the following reason:\nFiatTokenV2: authorization is used or canceled\n\nContract Call:\n  address:   0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913\n  function:  transferWithAuthorization(address from, address to",
+  "replay_rejected": true,
+  "detection_correct": true
+}

@@ -89,6 +89,18 @@ NUMBER_RUN_FIELDS = ["wall_clock_seconds"]
 
 ALLOWED_GROUPS = {"control", "treatment"}
 
+# Record type discriminator: absent means "model-run" (original schema).
+ALLOWED_RECORD_TYPES = {"model-run", "payment-run"}
+
+# payment-run top-level: tool/SDK versions object (required string values).
+REQUIRED_VERSION_KEYS = ["bun", "node", "x402_fetch", "x402_evm"]
+OPTIONAL_VERSION_KEYS = ["anvil_fork_block", "anvil"]
+
+# payment-run run-record fields.
+HEX64_RE = re.compile(r"^0x[0-9a-fA-F]{64}$")
+ADDRESS_RE = re.compile(r"^0x[0-9a-fA-F]{40}$")
+NULLABLE_PAYMENT_RUN_FIELDS = {"note", "receipt", "tx_hash"}
+
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
@@ -240,6 +252,107 @@ def validate_scores(scores, runs):
     return errors
 
 
+def validate_record_type(data):
+    """Check the optional record_type discriminator."""
+    errors = []
+    value = data.get("record_type", "model-run")
+    if not isinstance(value, str):
+        errors.append("top-level field record_type is not a string")
+    elif value not in ALLOWED_RECORD_TYPES:
+        errors.append(
+            f"top-level field record_type {value!r} not in {sorted(ALLOWED_RECORD_TYPES)}"
+        )
+    return errors
+
+
+def validate_payment_top_level(data):
+    """payment-run top-level extras: versions object and rpc_endpoints array."""
+    errors = []
+    versions = data.get("versions")
+    if not isinstance(versions, dict):
+        errors.append("top-level field versions is not an object")
+    else:
+        for key in REQUIRED_VERSION_KEYS:
+            value = versions.get(key)
+            if value is None:
+                errors.append(f"versions is missing required key {key}")
+            elif not isinstance(value, str):
+                errors.append(f"versions[{key}] is not a string")
+        for key in OPTIONAL_VERSION_KEYS:
+            value = versions.get(key)
+            if value is not None and not isinstance(value, str):
+                errors.append(f"versions[{key}] is not a string or null")
+    endpoints = data.get("rpc_endpoints")
+    if not isinstance(endpoints, list) or not all(isinstance(e, str) for e in endpoints):
+        errors.append("top-level field rpc_endpoints is not an array of strings")
+    elif not endpoints:
+        errors.append("top-level field rpc_endpoints is empty")
+    return errors
+
+
+def validate_payment_runs(runs):
+    """Check payment-run record structure: settlement identity and receipt."""
+    errors = []
+    if not isinstance(runs, dict):
+        return [f"runs is not an object: {type(runs).__name__}"]
+    for run_id, record in runs.items():
+        if not isinstance(record, dict):
+            errors.append(f"run {run_id} is not an object")
+            continue
+        required = ["mode", "tx_hash", "payer", "pay_to", "amount_usdc", "receipt"]
+        for field in required:
+            if field not in record:
+                errors.append(f"run {run_id} missing {field}")
+        settled = record.get("settled")
+        if not isinstance(settled, bool):
+            errors.append(f"run {run_id} field settled is not a boolean")
+            settled = None
+        tx_hash = record.get("tx_hash")
+        if tx_hash is not None and not isinstance(tx_hash, str):
+            errors.append(f"run {run_id} field tx_hash is not a string or null")
+        elif tx_hash is not None and not HEX64_RE.match(tx_hash):
+            errors.append(f"run {run_id} field tx_hash is not a 0x-prefixed 32-byte hex hash")
+        elif tx_hash is None and "tx_hash" in record and settled is not False:
+            errors.append(
+                f"run {run_id} has null tx_hash (allowed only when settled is false)"
+            )
+        for field in ("payer", "pay_to"):
+            value = record.get(field)
+            if value is None:
+                errors.append(f"run {run_id} has null {field}")
+            elif not isinstance(value, str):
+                errors.append(f"run {run_id} field {field} is not a string")
+            elif not ADDRESS_RE.match(value):
+                errors.append(f"run {run_id} field {field} is not a 0x-prefixed 20-byte address")
+        amount = record.get("amount_usdc")
+        if amount is None:
+            errors.append(f"run {run_id} has null amount_usdc")
+        elif not _is_finite_number(amount):
+            errors.append(f"run {run_id} field amount_usdc is not a finite number")
+        elif amount < 0:
+            errors.append(f"run {run_id} field amount_usdc is negative")
+        receipt = record.get("receipt")
+        if receipt is not None and not isinstance(receipt, dict):
+            errors.append(f"run {run_id} field receipt is not an object or null")
+        elif receipt is None and settled is True:
+            errors.append(
+                f"run {run_id} has null receipt (required when settled is true)"
+            )
+        mode = record.get("mode")
+        if mode is not None and not isinstance(mode, str):
+            errors.append(f"run {run_id} field mode is not a string")
+        value = record.get("wall_clock_seconds")
+        if "wall_clock_seconds" in record and value is not None:
+            if not _is_finite_number(value):
+                errors.append(f"run {run_id} field wall_clock_seconds is not a finite number")
+            elif value < 0:
+                errors.append(f"run {run_id} field wall_clock_seconds is negative")
+        note = record.get("note")
+        if note is not None and not isinstance(note, str):
+            errors.append(f"run {run_id} field note is not a string or null")
+    return errors
+
+
 def validate_record(data, expected_slug=None):
     """Validate a full analysis.json record.
 
@@ -248,9 +361,15 @@ def validate_record(data, expected_slug=None):
     if not isinstance(data, dict):
         return [f"top-level JSON value is not an object: {type(data).__name__}"]
     errors = validate_top_level(data)
-    runs = data.get("runs")
-    errors.extend(validate_runs(runs))
-    errors.extend(validate_scores(data.get("scores"), runs))
+    errors.extend(validate_record_type(data))
+    record_type = data.get("record_type", "model-run")
+    if record_type == "payment-run":
+        errors.extend(validate_payment_top_level(data))
+        errors.extend(validate_payment_runs(data.get("runs")))
+    else:
+        runs = data.get("runs")
+        errors.extend(validate_runs(runs))
+    errors.extend(validate_scores(data.get("scores"), data.get("runs")))
     if (
         expected_slug is not None
         and isinstance(data.get("experiment"), str)
@@ -313,8 +432,67 @@ MINIMAL_VALID_RECORD = {
 }
 
 
+MINIMAL_VALID_PAYMENT_RECORD = {
+    "experiment": "exp-payment",
+    "schema_version": "1.0.0",
+    "record_type": "payment-run",
+    "title": "Example Payment Experiment",
+    "issue": None,
+    "date": "2026-01-01",
+    "model": "none",
+    "n_per_group": 1,
+    "control_condition": "baseline decode",
+    "treatment_condition": "paid settlement",
+    "rubric_version": "rubric-v1",
+    "orchestrator_session": None,
+    "repo_head": "0000000000000000000000000000000000000000",
+    "experiment_start": "2026-01-01T00:00:00Z",
+    "experiment_end": "2026-01-01T01:00:00Z",
+    "analyzed_at": "2026-01-02T00:00:00Z",
+    "versions": {
+        "bun": "1.4.0",
+        "node": "26.13.0",
+        "x402_fetch": "2.29.0",
+        "x402_evm": "2.29.0",
+        "anvil_fork_block": None,
+    },
+    "rpc_endpoints": ["https://mainnet.base.org", "https://base.publicnode.com"],
+    "runs": {
+        "run_1": {
+            "mode": "happy-path",
+            "settled": True,
+            "tx_hash": "0x" + "c6e5" * 16,
+            "payer": "0x" + "d0d4" * 10,
+            "pay_to": "0x" + "1693" * 10,
+            "amount_usdc": 0.01,
+            "receipt": {"success": True, "transaction": "0x" + "c6e5" * 16},
+            "wall_clock_seconds": 3.5,
+            "note": None,
+        }
+    },
+    "scores": {"run_1": {"pass": True}},
+    "statistical_test": "descriptive-only",
+    "conclusion": "Verification passed.",
+    "pre_acknowledged_limitations": ["single settlement"],
+}
+
+
 def _mutated(**changes):
     record = _load_json_strict(json.dumps(MINIMAL_VALID_RECORD))
+    for dotted, value in changes.items():
+        parts = dotted.split("__")
+        target = record
+        for part in parts[:-1]:
+            target = target[part]
+        if value is _DELETE:
+            del target[parts[-1]]
+        else:
+            target[parts[-1]] = value
+    return record
+
+
+def _mutated_payment(**changes):
+    record = _load_json_strict(json.dumps(MINIMAL_VALID_PAYMENT_RECORD))
     for dotted, value in changes.items():
         parts = dotted.split("__")
         target = record
@@ -505,6 +683,87 @@ def self_test():
                 return False
         finally:
             shutil.rmtree(empty_base)
+    # payment-run branch: valid record, then edge cases.
+    if validate_record(MINIMAL_VALID_PAYMENT_RECORD):
+        print("self-test FAILED: minimal valid payment record reported errors")
+        return False
+    if validate_record(
+        MINIMAL_VALID_PAYMENT_RECORD, expected_slug="exp-payment"
+    ):
+        print("self-test FAILED: valid payment record with matching slug reported errors")
+        return False
+    payment_cases = [
+        (
+            _mutated_payment(runs__run_1__tx_hash=_DELETE),
+            "run run_1 missing tx_hash",
+            "payment missing tx_hash",
+        ),
+        (
+            _mutated_payment(runs__run_1__payer="0x1234"),
+            "payer is not a 0x-prefixed 20-byte address",
+            "payment non-hex payer",
+        ),
+        (
+            _mutated_payment(runs__run_1__tx_hash=None),
+            "null tx_hash (allowed only when settled is false)",
+            "payment null tx_hash with settled true",
+        ),
+        (
+            _mutated_payment(runs__run_1__pay_to="not-hex"),
+            "pay_to is not a 0x-prefixed 20-byte address",
+            "payment non-hex pay_to",
+        ),
+        (
+            _mutated_payment(runs__run_1__amount_usdc="cheap"),
+            "amount_usdc is not a finite number",
+            "payment non-numeric amount",
+        ),
+        (
+            _mutated_payment(runs__run_1__receipt=None),
+            "null receipt (required when settled is true)",
+            "payment null receipt when settled",
+        ),
+        (
+            _mutated_payment(versions__bun=None),
+            "versions is missing required key bun",
+            "payment missing version key",
+        ),
+        (
+            _mutated_payment(rpc_endpoints=[]),
+            "rpc_endpoints is empty",
+            "payment empty rpc endpoints",
+        ),
+        (
+            _mutated(record_type="barter"),
+            "record_type 'barter' not in",
+            "unknown record_type",
+        ),
+        (
+            _mutated_payment(runs__run_1__settled="yes"),
+            "field settled is not a boolean",
+            "payment non-boolean settled",
+        ),
+    ]
+    for record, substring, label in payment_cases:
+        if not _expect_errors(record, substring, label):
+            return False
+    unpaid_payment = _mutated_payment(
+        record_type="payment-run",
+        runs__run_1={
+            "mode": "decode-only",
+            "settled": False,
+            "tx_hash": None,
+            "payer": "0x" + "d0d4" * 10,
+            "pay_to": "0x" + "1693" * 10,
+            "amount_usdc": 0,
+            "receipt": None,
+            "wall_clock_seconds": 0.2,
+            "note": "unpaid discovery iteration",
+        },
+    )
+    if validate_record(unpaid_payment):
+        print(f"self-test FAILED: unpaid payment run rejected: {validate_record(unpaid_payment)}")
+        return False
     print(
         "self-test passed: valid record accepted, each rule rejects its invalid case, discovery flags missing analysis.json"
     )

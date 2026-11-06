@@ -1,0 +1,98 @@
+{
+  "experiment": "mock-seller",
+  "schema_version": "1.0.0",
+  "record_type": "payment-run",
+  "title": "Buyer-side detection of hostile localhost seller failure modes with Anvil-fork EIP-3009 replay",
+  "issue": "1",
+  "date": "2026-11-06",
+  "model": "none",
+  "n_per_group": 1,
+  "control_condition": "baseline localhost seller fully consistent with its own manifest",
+  "treatment_condition": "single-field hostile mutations (amount, payTo, receipt keys) and an EVM-level replay on a pinned Anvil fork",
+  "rubric_version": "mock-seller-v1",
+  "orchestrator_session": null,
+  "repo_head": "be5ab7caba04e173d401155fdacce615bb95a46f",
+  "experiment_start": "2026-11-06T20:41:00Z",
+  "experiment_end": "2026-11-06T20:48:00Z",
+  "analyzed_at": "2026-11-06T20:49:00Z",
+  "versions": {
+    "bun": "1.4.0",
+    "node": "26.13.0",
+    "x402_fetch": "2.29.0",
+    "x402_evm": "2.29.0",
+    "anvil": "1.9.0",
+    "anvil_fork_block": "54035433"
+  },
+  "rpc_endpoints": ["http://127.0.0.1:18545 (Anvil fork of https://mainnet.base.org)"],
+  "runs": {
+    "baseline": {
+      "mode": "baseline",
+      "settled": false,
+      "tx_hash": null,
+      "payer": "0xd0D40C485C6878DF38485E71bcc0Ad95Fb97FA5E",
+      "pay_to": "0x169313d28075a6dDB70E7e5190a1Eddc0d105671",
+      "amount_usdc": 0,
+      "receipt": null,
+      "wall_clock_seconds": 1.2,
+      "note": "in-memory dev key signed a payload; localhost seller returned a complete receipt; detector did not flag (correct)"
+    },
+    "amount_mismatch": {
+      "mode": "amount-mismatch",
+      "settled": false,
+      "tx_hash": null,
+      "payer": "0xd0D40C485C6878DF38485E71bcc0Ad95Fb97FA5E",
+      "pay_to": "0x169313d28075a6dDB70E7e5190a1Eddc0d105671",
+      "amount_usdc": 0,
+      "receipt": null,
+      "wall_clock_seconds": 1.1,
+      "note": "challenge amount 99999 vs manifest 10000; cross-check detected"
+    },
+    "pay_to_mismatch": {
+      "mode": "payTo-mismatch",
+      "settled": false,
+      "tx_hash": null,
+      "payer": "0xd0D40C485C6878DF38485E71bcc0Ad95Fb97FA5E",
+      "pay_to": "0x269313d28075a6ddb70e7e5190a1eddc0d105671",
+      "amount_usdc": 0,
+      "receipt": null,
+      "wall_clock_seconds": 1.1,
+      "note": "challenge payTo differs from manifest payTo; cross-check detected"
+    },
+    "receipt_missing_key": {
+      "mode": "receipt-missing-key",
+      "settled": false,
+      "tx_hash": null,
+      "payer": "0xd0D40C485C6878DF38485E71bcc0Ad95Fb97FA5E",
+      "pay_to": "0x169313d28075a6dDB70E7e5190a1Eddc0d105671",
+      "amount_usdc": 0,
+      "receipt": { "success": true },
+      "wall_clock_seconds": 1.1,
+      "note": "seller receipt dropped transaction or settledAmountUsdc; receipt-key check detected"
+    },
+    "replay": {
+      "mode": "replay",
+      "settled": true,
+      "tx_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "payer": "0xCFDf9cF9c4a2078ADe2523d630A21aaB4fc991Ff",
+      "pay_to": "0x169313d28075a6dDB70E7e5190a1Eddc0d105671",
+      "amount_usdc": 10000,
+      "receipt": { "first_settle_status": "success", "second_settle_status": "reverted", "revert_reason": "FiatTokenV2: authorization is used or canceled" },
+      "wall_clock_seconds": 12.4,
+      "note": "Anvil fork of Base pinned at block 54035433; dev payer funded via anvil_setBalance + anvil_setStorageAt (USDC slot 9); tx_hash is the fork-local first-settle tx reference, not a mainnet transaction; the identical replay with the same nonce reverted at EVM state level"
+    }
+  },
+  "scores": {
+    "baseline": { "pass": true, "detected": false, "expected_detected": false },
+    "amount_mismatch": { "pass": true, "detected": true, "expected_detected": true },
+    "pay_to_mismatch": { "pass": true, "detected": true, "expected_detected": true },
+    "receipt_missing_key": { "pass": true, "detected": true, "expected_detected": true },
+    "replay": { "pass": true, "detected": true, "expected_detected": true }
+  },
+  "statistical_test": "descriptive-only",
+  "conclusion": "All four detection outcomes correct: baseline passes unchanged echo-verify criteria; amount-mismatch, payTo-mismatch, and receipt-missing-key are each detected by cross-checks; the same-nonce EIP-3009 replay reverts on the pinned Anvil fork.",
+  "pre_acknowledged_limitations": [
+    "mock seller is harness code; deviations are controlled single-field mutations",
+    "Anvil fork state is synthetic; replay rejection demonstrates EVM nonce semantics, not live facilitator behavior",
+    "single run per mode"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "mode": "amount-mismatch",
+  "detected": true,
+  "expected_detected": true,
+  "detection_correct": true,
+  "decode_checks": {
+    "got_402": true,
+    "header_present": true,
+    "v2_shape": true,
+    "asset_is_base_usdc": true,
+    "manifest_amount_matches_challenge": false,
+    "manifest_payTo_matches_challenge": true
+  },
+  "receipt_checks": {
+    "receipt_captured": true,
+    "success_true": true,
+    "transaction_present_and_hex": true,
+    "settledAmount_present": true,
+    "settledAmount_matches_challenge": false
+  },
+  "manifest": {
+    "x402Version": 2,
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "amount": "10000",
+        "payTo": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+        "maxTimeoutSeconds": 60,
+        "extra": {
+          "name": "USD Coin",
+          "version": "2"
+        }
+      }
+    ]
+  },
+  "challenge": {
+    "x402Version": 2,
+    "resource": {
+      "url": "http://localhost:4501/v1/echo",
+      "description": "mock seller echo"
+    },
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "amount": "99999",
+        "payTo": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+        "maxTimeoutSeconds": 60,
+        "extra": {
+          "name": "USD Coin",
+          "version": "2"
+        }
+      }
+    ]
+  },
+  "receipt": {
+    "success": true,
+    "network": "eip155:8453",
+    "payer": "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
+    "settledAmountUsdc": "10000",
+    "transaction": "0xabababababababababababababababababababababababababababababababab"
+  },
+  "paid_http_status": 200
+}

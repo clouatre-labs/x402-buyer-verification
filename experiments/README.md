@@ -7,6 +7,16 @@ schema-validation fixture; copy it when starting a real experiment. CI
 validates every `experiments/*/analysis.json`, so an experiment directory
 without `analysis.json` fails the build.
 
+## Payment experiments
+
+Experiments that exercise the x402 payment protocol set
+`record_type: "payment-run"` in `analysis.json` (see DATA_DICTIONARY.md).
+Raw outputs from every run (challenge headers, receipts, on-chain event
+evidence, probe transcripts) are committed under `data/` inside the
+experiment directory. Each experiment's README includes an SDK-vs-harness
+attribution table mapping every checked behavior to the x402 SDK, this
+repository's harness, or the remote service.
+
 ## Required Layout
 
 ```text

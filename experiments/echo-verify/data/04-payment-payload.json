@@ -1,0 +1,158 @@
+{
+  "x402Version": 2,
+  "payload": {
+    "authorization": {
+      "from": "0xd0D40C485C6878DF38485E71bcc0Ad95Fb97FA5E",
+      "to": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+      "value": "10000",
+      "validAfter": "0",
+      "validBefore": "1793997254",
+      "nonce": "0x85504cbd2b595c6dbe3d90bef16559c754eaefe9ad2a51ca07d5a7610579133a"
+    },
+    "signature": "0x41f2a4667da3f6bbcdbcee4a42287b3bd94c2635f29cbab1b52697966da123f34ec9184bee941bca1c0e69ead996bf93797b0ec6c805944a49a59368c43fdb101c"
+  },
+  "extensions": {
+    "builder-code": {
+      "info": {
+        "a": "bc_ognzk2zl"
+      },
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]{1,32}$",
+            "description": "App builder code"
+          },
+          "w": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]{1,32}$",
+            "description": "Wallet builder code"
+          },
+          "s": {
+            "type": "array",
+            "maxItems": 11,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9_]{1,32}$"
+            },
+            "description": "Service builder codes"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "bazaar": {
+      "info": {
+        "input": {
+          "type": "http",
+          "bodyType": "json",
+          "body": {
+            "message": "hello from an autonomous agent"
+          },
+          "method": "POST"
+        },
+        "output": {
+          "type": "json",
+          "example": {
+            "echo": {
+              "message": "hello from an autonomous agent"
+            }
+          }
+        }
+      },
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "http"
+              },
+              "method": {
+                "type": "string",
+                "enum": [
+                  "POST",
+                  "PUT",
+                  "PATCH"
+                ]
+              },
+              "bodyType": {
+                "type": "string",
+                "enum": [
+                  "json",
+                  "form-data",
+                  "text"
+                ]
+              },
+              "body": {
+                "type": "object",
+                "required": [
+                  "message"
+                ],
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "maxLength": 10000
+                  }
+                }
+              }
+            },
+            "required": [
+              "type",
+              "method",
+              "bodyType",
+              "body"
+            ],
+            "additionalProperties": false
+          },
+          "output": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "example": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          }
+        },
+        "required": [
+          "input"
+        ]
+      }
+    }
+  },
+  "resource": {
+    "url": "https://aptu.dev/v1/echo",
+    "description": "Echoes a JSON {message} back; the simplest paid call for verifying your x402 payment flow.",
+    "mimeType": "application/json",
+    "serviceName": "aptu.dev",
+    "tags": [
+      "echo",
+      "x402",
+      "testing"
+    ],
+    "iconUrl": "https://aptu.dev/favicon.png"
+  },
+  "accepted": {
+    "scheme": "exact",
+    "network": "eip155:8453",
+    "amount": "10000",
+    "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "payTo": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+    "maxTimeoutSeconds": 60,
+    "extra": {
+      "name": "USD Coin",
+      "version": "2"
+    }
+  }
+}

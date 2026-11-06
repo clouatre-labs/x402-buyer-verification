@@ -1,0 +1,77 @@
+{
+  "url": "https://aptu.dev/.well-known/x402",
+  "status": 200,
+  "body": {
+    "x402Version": 2,
+    "kind": "resource-server",
+    "name": "aptu.dev",
+    "description": "Machine-payable API infrastructure for autonomous agents. Pay per call in USDC on Base or Solana.",
+    "facilitator": {
+      "name": "coinbase",
+      "default": "https://api.cdp.coinbase.com/platform/v2/x402"
+    },
+    "payTo": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+    "network": "eip155:8453",
+    "networks": [
+      "eip155:8453",
+      "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+    ],
+    "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "solanaAsset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "updated": "2026-11-06",
+    "updated_at": "2026-11-06",
+    "resources": [
+      "https://aptu.dev/v1/echo",
+      "https://aptu.dev/v1/resume-eval",
+      "https://aptu.dev/v1/agent-readiness",
+      "https://aptu.dev/v1/btc-regime",
+      "https://aptu.dev/v1/x402-preflight",
+      "https://aptu.dev/v1/readiness-fix"
+    ],
+    "services": [
+      {
+        "method": "POST",
+        "path": "/v1/echo",
+        "description": "Echoes a JSON {message} back; the simplest paid call for verifying your x402 payment flow.",
+        "amount": "$0.01"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/resume-eval",
+        "description": "Scores a resume 0-4 against an ATS rubric (impact, parseability, executive framing, contact).",
+        "amount": "$0.005"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/agent-readiness",
+        "description": "Audits a domain's agent readiness against the aptu-readiness-1 rubric (origin headers, robots.txt, llms.txt, sitemap, agents.txt, skill.md, JSON-LD, mcp.json, A2A card, x402 manifest), weighted 0-100; rubric: https://aptu.dev/agent-readiness-checks",
+        "amount": "$0.05"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/btc-regime",
+        "description": "BTC spot regime check against a 7-day moving average gate (bull/bear, MA7, deviation pct, favor-entry/block-entry action).",
+        "amount": "$0.003"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/x402-preflight",
+        "description": "Seller-side x402 protocol conformance pre-flight check for a deployed resource URL (schema validation, mechanism reachability, facilitator cross-check, advisory scar-tissue findings) with a graded 0-100 report and per-failure remedies.",
+        "amount": "$0.05"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/readiness-fix",
+        "description": "Re-probes a domain and returns nine ready-to-host machine-surface artifacts (llms.txt, robots.txt, sitemap.xml, agents.txt, skill.md, mcp.json, agent-card.json) templated from probe facts; rubric at https://aptu.dev/readiness-fix-checks.",
+        "amount": "$0.05"
+      }
+    ],
+    "discovery": [
+      "https://aptu.dev/v1/openapi.json",
+      "https://aptu.dev/v1/catalog",
+      "https://aptu.dev/llms-full.txt",
+      "https://aptu.dev/mcp",
+      "https://aptu.dev/.well-known/mcp.json"
+    ]
+  }
+}

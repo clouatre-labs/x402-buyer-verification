@@ -1,0 +1,72 @@
+{
+  "experiment": "preflight-external",
+  "schema_version": "1.0.0",
+  "record_type": "payment-run",
+  "title": "Decode-only probe of three third-party x402 endpoints with hard no-payment guard",
+  "issue": "1",
+  "date": "2026-11-06",
+  "model": "none",
+  "n_per_group": 1,
+  "control_condition": "guarded fetch wrapper with no payment-bearing headers permitted",
+  "treatment_condition": "unpaid decode request against each endpoint's first manifested resource",
+  "rubric_version": "preflight-external-v1",
+  "orchestrator_session": null,
+  "repo_head": "be5ab7caba04e173d401155fdacce615bb95a46f",
+  "experiment_start": "2026-11-06T20:55:00Z",
+  "experiment_end": "2026-11-06T20:56:00Z",
+  "analyzed_at": "2026-11-06T20:57:00Z",
+  "versions": {
+    "bun": "1.4.0",
+    "node": "26.13.0",
+    "x402_fetch": "2.29.0",
+    "x402_evm": "2.29.0"
+  },
+  "rpc_endpoints": ["none (decode-only probe; no RPC calls made)"],
+  "runs": {
+    "kaisha": {
+      "mode": "decode-only",
+      "settled": false,
+      "tx_hash": null,
+      "payer": "0xd0D40C485C6878DF38485E71bcc0Ad95Fb97FA5E",
+      "pay_to": "0xF2A6416EBb0C594Ab2977695bED061729ddEb47b",
+      "amount_usdc": 0.005,
+      "receipt": null,
+      "wall_clock_seconds": 0.6,
+      "note": "GET /resolve unpaid returned 402 with x402Version 2, v2 shape valid; guard did not trip; pay_to is the endpoint's advertised payTo (read-only decode, no payment)"
+    },
+    "blockrun": {
+      "mode": "decode-only",
+      "settled": false,
+      "tx_hash": null,
+      "payer": "0xd0D40C485C6878DF38485E71bcc0Ad95Fb97FA5E",
+      "pay_to": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+      "amount_usdc": 0.002,
+      "receipt": null,
+      "wall_clock_seconds": 0.7,
+      "note": "POST /api/v1/chat/completions unpaid returned 402 with x402Version 2, v2 shape valid; decoded challenge accepts[0].payTo = 0xe9030014F5DAe217d0A152f02A043567b16c1aBf with amount 2000 base units (0.002 USDC); guard did not trip"
+    },
+    "agent402": {
+      "mode": "decode-only",
+      "settled": false,
+      "tx_hash": null,
+      "payer": "0xd0D40C485C6878DF38485E71bcc0Ad95Fb97FA5E",
+      "pay_to": "0xaBF4FAbd7c416fB67202E5f9002389Fc75e2a9D0",
+      "amount_usdc": 0,
+      "receipt": null,
+      "wall_clock_seconds": 0.4,
+      "note": "POST /api/extract unpaid returned 404 without challenge; no challenge-issued payTo or amount exists, so pay_to here is the well-known manifest-advertised address and amount_usdc is 0 (no challenge issued); decode divergence recorded verbatim per protocol (no retries); guard did not trip"
+    }
+  },
+  "scores": {
+    "kaisha": { "pass": true, "v2_shape": true, "guard_trips": 0 },
+    "blockrun": { "pass": true, "v2_shape": true, "guard_trips": 0 },
+    "agent402": { "pass": true, "v2_shape": false, "decode_divergence_finding": true, "guard_trips": 0 }
+  },
+  "statistical_test": "descriptive-only",
+  "conclusion": "Two of three endpoints (kaisha, blockrun) return protocol-compatible v2 402 challenges; agent402.tools diverges (404, no challenge); zero payment-bearing headers were sent.",
+  "pre_acknowledged_limitations": [
+    "single request per endpoint, no retries by design",
+    "third-party manifests may change between selection and run",
+    "endpoint selection restricted to three pre-registered candidates"
+  ]
+}
