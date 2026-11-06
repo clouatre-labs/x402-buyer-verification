@@ -7,6 +7,7 @@
  *
  * Usage: bun experiments/mock-seller/probe.ts [--modes baseline,amount-mismatch,...]
  */
+import { randomInt } from "node:crypto";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
 import { x402Client, wrapFetchWithPayment } from "@x402/fetch";
@@ -53,7 +54,7 @@ async function waitForServer(url: string, tries = 40): Promise<void> {
 }
 
 async function runMode(mode: string): Promise<Record<string, unknown>> {
-  const port = 4100 + Math.floor(Math.random() * 800);
+  const port = 4100 + randomInt(800);
   const baseUrl = `http://localhost:${port}`;
   const seller = Bun.spawn(["bun", "experiments/mock-seller/seller.ts", "--mode", mode, "--port", String(port)], {
     stdout: "pipe",
