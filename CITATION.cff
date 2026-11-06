@@ -1,20 +1,29 @@
 cff-version: 1.2.0
 message: "If you use this dataset, please cite it using the metadata below."
 type: dataset
-title: "{{TITLE}}"
+title: "x402-buyer-verification: buyer-side verification of x402 v2 payments on Base"
 authors:
-  - family-names: "{{AUTHOR_FAMILY_NAMES}}"
-    given-names: "{{AUTHOR_GIVEN_NAMES}}"
-    orcid: "https://orcid.org/{{ORCID}}"
-repository-code: https://github.com/clouatre-labs/{{REPO_NAME}}
+  - family-names: "Clouâtre"
+    given-names: "Hugues"
+    email: "hugues@linux.com"
+repository-code: https://github.com/clouatre-labs/x402-buyer-verification
 license: Apache-2.0
-date-released: "{{RELEASE_DATE}}"
-version: "{{VERSION}}"
+date-released: "2026-11-06"
+version: "1.0.0"
 abstract: >
-  TODO: One-paragraph abstract describing the dataset and the experiments
-  it contains. Replace this placeholder before first release.
+  Committed data and analysis for three pre-registered buyer-side
+  experiments verifying x402 v2 payments on Base. A fresh $0.01 mainnet
+  settlement verified end-to-end via payer-anchored Transfer events on two
+  independent RPCs (paid run 1.11 s; discovery median 0.0388 s over 15
+  GETs). Four of four hostile-seller failure modes were correctly
+  detected, including a same-nonce EIP-3009 replay that reverted at EVM
+  state level on an Anvil fork pinned at block 54035433. Two of three
+  third-party endpoints returned protocol-compatible v2 402 challenges;
+  agent402.tools diverged with a 404. Zero payment-bearing headers were
+  sent in the third-party probe.
 keywords:
   - llm-agents
   - pre-registered-experiment
   - reproducibility
   - llm-evaluation
+  - x402

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="392" viewBox="0 0 640 392" role="img" aria-label="Unpaid discovery GET latency per iteration (echo-verify)">
+  <style>
+    text { font-family: ui-monospace, Menlo, monospace; }
+    .title { font-size: 14px; font-weight: 600; fill: #18181b; }
+    .label { font-size: 12px; fill: #18181b; }
+    .value { font-size: 12px; fill: #18181b; }
+    .note { font-size: 12px; fill: #52525b; }
+    .mark { fill: #075985; }
+    .ref { stroke: #dc2626; stroke-width: 1.5; }
+    .band { fill: #075985; fill-opacity: 0.10; }
+  </style>
+  <rect x="255.3" y="110" width="39.7" height="142" class="band"/>
+  <line x1="255.3" y1="110" x2="255.3" y2="252" class="ref"/>
+  <line x1="295.0" y1="110" x2="295.0" y2="252" class="ref"/>
+  <line x1="292.5" y1="32" x2="292.5" y2="180.0" class="ref"/>
+  <text x="320.0" y="24" text-anchor="middle" class="title">Unpaid discovery GET latency per iteration (echo-verify, exploratory)</text>
+  <text x="86" y="50.0" text-anchor="end" class="label">#1</text>
+  <rect x="96" y="40" width="448.0" height="12" rx="2" class="mark"/>
+  <text x="552.0" y="50.0" class="value">88.5 ms</text>
+  <text x="86" y="68.0" text-anchor="end" class="label">#15</text>
+  <rect x="96" y="58" width="241.1" height="12" rx="2" class="mark"/>
+  <text x="345.1" y="68.0" class="value">47.6 ms</text>
+  <text x="86" y="86.0" text-anchor="end" class="label">#4</text>
+  <rect x="96" y="76" width="202.8" height="12" rx="2" class="mark"/>
+  <text x="306.8" y="86.0" class="value">40.1 ms</text>
+  <text x="86" y="104.0" text-anchor="end" class="label">#12</text>
+  <rect x="96" y="94" width="199.3" height="12" rx="2" class="mark"/>
+  <text x="303.3" y="104.0" class="value">39.4 ms</text>
+  <text x="86" y="122.0" text-anchor="end" class="label">#2</text>
+  <rect x="96" y="112" width="198.8" height="12" rx="2" class="mark"/>
+  <text x="302.8" y="122.0" class="value">39.3 ms</text>
+  <text x="86" y="140.0" text-anchor="end" class="label">#10</text>
+  <rect x="96" y="130" width="196.9" height="12" rx="2" class="mark"/>
+  <text x="300.9" y="140.0" class="value">38.9 ms</text>
+  <text x="86" y="158.0" text-anchor="end" class="label">#3</text>
+  <rect x="96" y="148" width="196.8" height="12" rx="2" class="mark"/>
+  <text x="300.8" y="158.0" class="value">38.9 ms</text>
+  <text x="86" y="176.0" text-anchor="end" class="label">#6</text>
+  <rect x="96" y="166" width="196.5" height="12" rx="2" class="mark"/>
+  <text x="300.5" y="176.0" class="value">38.8 ms</text>
+  <text x="86" y="194.0" text-anchor="end" class="label">#7</text>
+  <rect x="96" y="184" width="192.9" height="12" rx="2" class="mark"/>
+  <text x="296.9" y="194.0" class="value">38.1 ms</text>
+  <text x="86" y="212.0" text-anchor="end" class="label">#13</text>
+  <rect x="96" y="202" width="192.2" height="12" rx="2" class="mark"/>
+  <text x="296.2" y="212.0" class="value">38.0 ms</text>
+  <text x="86" y="230.0" text-anchor="end" class="label">#5</text>
+  <rect x="96" y="220" width="187.7" height="12" rx="2" class="mark"/>
+  <text x="291.7" y="230.0" class="value">37.1 ms</text>
+  <text x="86" y="248.0" text-anchor="end" class="label">#9</text>
+  <rect x="96" y="238" width="130.9" height="12" rx="2" class="mark"/>
+  <text x="234.9" y="248.0" class="value">25.9 ms</text>
+  <text x="86" y="266.0" text-anchor="end" class="label">#8</text>
+  <rect x="96" y="256" width="127.6" height="12" rx="2" class="mark"/>
+  <text x="231.6" y="266.0" class="value">25.2 ms</text>
+  <text x="86" y="284.0" text-anchor="end" class="label">#11</text>
+  <rect x="96" y="274" width="126.5" height="12" rx="2" class="mark"/>
+  <text x="230.5" y="284.0" class="value">25.0 ms</text>
+  <text x="86" y="302.0" text-anchor="end" class="label">#14</text>
+  <rect x="96" y="292" width="126.5" height="12" rx="2" class="mark"/>
+  <text x="230.5" y="302.0" class="value">25.0 ms</text>
+  <text x="96" y="318" class="note">Exploratory (post-hoc). Source: experiments/echo-verify/data/03-latency-samples.json</text>
+  <text x="96" y="334" class="note">n = 15; median 0.0388 s, IQR 0.0315-0.0393 s (red lines); sorted largest on top</text>
+</svg>
