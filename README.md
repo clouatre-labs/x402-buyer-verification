@@ -74,12 +74,6 @@ hard no-payment guard: zero payment headers are sent, and the guard trips on
 
 *Figure 2: unpaid discovery GET latency per iteration across 15 committed samples in run order (median 38.8 ms, IQR 31.5-39.3 ms shown as median line and shaded IQR band in legend). Exploratory (post-hoc).*
 
-## Mock-seller detection outcomes
-
-![Hostile-seller failure modes, detection outcomes](figures/fig2-detection-matrix.png)
-
-*Figure 3: detection matrix for the four hostile mock-seller modes plus the baseline control (passed clean), annotating the exact value caught in each case. The replayed-nonce row is fork-local (Anvil fork of Base pinned at block 54035433), not mainnet. Exploratory (post-hoc).*
-
 ## Repository Layout
 
 - `experiments/` - one directory per experiment (protocol, runner, data, analysis.json)
@@ -105,7 +99,7 @@ bun experiments/echo-verify/verify.ts
 bun experiments/mock-seller/probe.ts
 bun experiments/preflight-external/probe.ts
 
-# regenerate Figure 3 from committed samples
+# regenerate Figure 2 from committed samples
 uv run --with matplotlib figures/fig1-discovery-latency.py
 ```
 
