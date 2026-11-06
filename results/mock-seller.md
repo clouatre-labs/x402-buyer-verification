@@ -15,8 +15,9 @@ Status: analyzed (2026-11-06)
 *Table 1: detection outcomes and timings, copied verbatim from [analysis.json](../experiments/mock-seller/analysis.json).*
 
 The replay payer was the fork-local dev account
-`0xCFDf9cF9c4a2078ADe2523d630A21aaB4fc991Ff`; the recorded tx hash is the
-fork-local first-settle reference, not a mainnet transaction. Negative
+`0xCFDf9cF9c4a2078ADe2523d630A21aaB4fc991Ff`; the recorded tx hash is a
+fork-local placeholder (`0x000...0`, synthetic — Anvil does not emit real
+hashes on a local fork), not an on-chain transaction. Negative
 finding (replay reverted) has a known cause: USDC's EIP-3009 authorization
 is single-use, so the second settle with the same nonce fails at EVM
 state level. Timings are descriptive only (single run per mode).

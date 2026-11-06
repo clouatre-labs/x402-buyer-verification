@@ -6,8 +6,20 @@
 
 <h1 align="center">x402-buyer-verification</h1>
 
+## For blog readers
+
+We verified x402 v2 payment settlement and hostile-seller detection on Base. Two
+on-chain traces back this work: a fresh $0.01 USDC settlement from this repo's
+Experiment 1 on 2026-11-06
+([0xa3143d...f201c](https://basescan.org/tx/0xa3143d32319392227c017ce86dceb2a8e377b7e4f32c21f2693a6925e91f201c))
+and prior evidence from 2026-11-03, re-verified read-only,
+([0xc6e56a...b9d6](https://basescan.org/tx/0xc6e56a3e0f902ec963aeb4cb6b912bf95ba8188860c840c79fa33d12f368b9d6)).
+The first run is a new payment executed for this repository; the second is an
+earlier settlement we checked again without spending. Disclosure: the authors
+are affiliated with aptu.dev, and Experiment 1 verifies our own endpoint.
+
 Buyer-side verification of x402 v2 payments on Base mainnet, executed as
-scripted, pre-registered protocol runs. Three experiments cover a fresh $0.01
+scripted protocol runs. Three experiments cover a fresh $0.01
 mainnet happy-path settlement (paid run 1.11 s, tx
 `0xa3143d32319392227c017ce86dceb2a8e377b7e4f32c21f2693a6925e91f201c`),
 hostile-seller failure detection (4/4 correct, including a same-nonce
@@ -28,7 +40,7 @@ graph TD
     E --> F[detect mismatches / replay]
 ```
 
-*Figure 1: buyer-side x402 verification chain exercised by all three experiments.*
+*Figure 1: buyer-side x402 verification chain exercised by all three experiments. Each step maps to code: fetch and decode in `experiments/echo-verify/verify.ts` (decode-only dry run via `--skip-pay`), EIP-3009 payload build and facilitator settle in the same runner, receipt plus dual-RPC Transfer-event assertion in `verify.ts`, and mismatch/replay detection in `experiments/mock-seller/probe.ts` and `experiments/mock-seller/replay.ts`.*
 
 ## Experiment Index
 
@@ -38,10 +50,23 @@ graph TD
 | `mock-seller` | Are hostile-seller failure modes detected? | analyzed | 4/4 detections correct; replay reverted at EVM level |
 | `preflight-external` | Are third-party x402 endpoints v2-compatible? | analyzed | 2/3 v2 challenges; agent402.tools 404 divergence |
 
-*Table 1: pre-registered experiment index with headline results.*
+*Table 1: experiment index with headline results.*
 
 Derived per-experiment reports live in [results/](results/); full numbers in
 [RESULTS.md](RESULTS.md).
+
+Experiment 3 (`preflight-external`) is a decode-only compatibility probe with a
+hard no-payment guard: zero payment headers are sent, and the guard trips on
+0 paid requests.
+
+| Mode | Detected | How |
+|------|----------|-----|
+| amount-mismatch | yes | challenge amount 99999 vs manifest 10000 (~10x) caught by decode cross-check |
+| payTo-mismatch | yes | challenge payTo 0x2693... vs manifest 0x1693... (single-hex swap) caught by decode cross-check |
+| receipt-missing-key | yes | receipt missing `settledAmountUsdc` caught by receipt cross-check |
+| replayed-nonce | yes | same-nonce EIP-3009 replay reverted at EVM level: `FiatTokenV2: authorization is used or canceled` (fork-local, Anvil at block 54035433) |
+
+*Table 2: hostile-seller failure modes and detection outcomes; baseline control passed clean. Values copied verbatim from [experiments/mock-seller/data/](experiments/mock-seller/data/).*
 
 ## Discovery latency
 
@@ -49,9 +74,15 @@ Derived per-experiment reports live in [results/](results/); full numbers in
 
 *Figure 2: unpaid discovery GET latency per iteration across 15 committed samples in run order (median 38.8 ms, IQR 31.5-39.3 ms shown as median line and shaded IQR band in legend). Exploratory (post-hoc).*
 
+## Mock-seller detection outcomes
+
+![Hostile-seller failure modes, detection outcomes](figures/fig2-detection-matrix.png)
+
+*Figure 3: detection matrix for the four hostile mock-seller modes plus the baseline control (passed clean), annotating the exact value caught in each case. The replayed-nonce row is fork-local (Anvil fork of Base pinned at block 54035433), not mainnet. Exploratory (post-hoc).*
+
 ## Repository Layout
 
-- `experiments/` - one directory per pre-registered experiment (protocol, runner, data, analysis.json)
+- `experiments/` - one directory per experiment (protocol, runner, data, analysis.json)
 - `results/` - derived per-experiment reports
 - `figures/` - rendered figures plus committed matplotlib source
 - [METHODOLOGY.md](METHODOLOGY.md) - shared experimental design contract
@@ -74,7 +105,7 @@ bun experiments/echo-verify/verify.ts
 bun experiments/mock-seller/probe.ts
 bun experiments/preflight-external/probe.ts
 
-# regenerate Figure 2 from committed samples
+# regenerate Figure 3 from committed samples
 uv run --with matplotlib figures/fig1-discovery-latency.py
 ```
 
