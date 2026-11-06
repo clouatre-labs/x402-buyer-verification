@@ -1,0 +1,3871 @@
+{
+  "endpoint": "https://blockrun.ai",
+  "wellknown_status": 200,
+  "wellknown": {
+    "version": 1,
+    "resources": [
+      "POST /api/v1/chat/completions",
+      "POST /api/v1/messages",
+      "POST /api/v1/responses",
+      "POST /api/v1/search",
+      "POST /api/v1/images/generations",
+      "POST /api/v1/images/image2image",
+      "POST /api/v1/videos/generations",
+      "POST /api/v1/audio/generations",
+      "POST /api/v1/phone/lookup",
+      "POST /api/v1/phone/lookup/fraud",
+      "POST /api/v1/phone/numbers/buy",
+      "POST /api/v1/phone/numbers/renew",
+      "POST /api/v1/phone/numbers/list",
+      "POST /api/v1/phone/numbers/release",
+      "POST /api/v1/voice/call",
+      "GET /api/v1/voice/call/{call_id}",
+      "POST /api/v1/audio/speech",
+      "POST /api/v1/audio/sound-effects",
+      "GET /api/v1/audio/voices",
+      "POST /api/v1/realface/init",
+      "POST /api/v1/realface/enroll",
+      "GET /api/v1/realface/status",
+      "POST /api/v1/portrait/enroll",
+      "POST /api/v1/polymarket/fund",
+      "POST /api/v1/onramp/token",
+      "GET /api/v1/models",
+      "GET /api/v1/images/models",
+      "GET /api/v1/audio/models",
+      "GET /api/v1/video/models",
+      "POST /api/v1/rpc/ethereum",
+      "POST /api/v1/rpc/base",
+      "POST /api/v1/rpc/arbitrum",
+      "POST /api/v1/rpc/arbitrum-nova",
+      "POST /api/v1/rpc/optimism",
+      "POST /api/v1/rpc/polygon",
+      "POST /api/v1/rpc/bsc",
+      "POST /api/v1/rpc/avalanche",
+      "POST /api/v1/rpc/fantom",
+      "POST /api/v1/rpc/cronos",
+      "POST /api/v1/rpc/celo",
+      "POST /api/v1/rpc/gnosis",
+      "POST /api/v1/rpc/zksync",
+      "POST /api/v1/rpc/berachain",
+      "POST /api/v1/rpc/unichain",
+      "POST /api/v1/rpc/monad",
+      "POST /api/v1/rpc/chiliz",
+      "POST /api/v1/rpc/moonbeam",
+      "POST /api/v1/rpc/aurora",
+      "POST /api/v1/rpc/flare",
+      "POST /api/v1/rpc/oasis",
+      "POST /api/v1/rpc/kaia",
+      "POST /api/v1/rpc/sonic",
+      "POST /api/v1/rpc/xdc",
+      "POST /api/v1/rpc/abstract",
+      "POST /api/v1/rpc/hyperevm",
+      "POST /api/v1/rpc/plume",
+      "POST /api/v1/rpc/ronin",
+      "POST /api/v1/rpc/rootstock",
+      "POST /api/v1/rpc/solana",
+      "POST /api/v1/rpc/bitcoin",
+      "POST /api/v1/rpc/litecoin",
+      "POST /api/v1/rpc/dogecoin",
+      "POST /api/v1/rpc/bitcoin-cash",
+      "POST /api/v1/rpc/near",
+      "POST /api/v1/rpc/sui",
+      "POST /api/v1/rpc/ripple",
+      "POST /api/v1/rpc/polkadot",
+      "POST /api/v1/rpc/kusama",
+      "POST /api/v1/rpc/zcash",
+      "POST /api/v1/modal/sandbox/create",
+      "POST /api/v1/modal/sandbox/exec",
+      "POST /api/v1/modal/sandbox/status",
+      "POST /api/v1/modal/sandbox/terminate",
+      "GET /api/v1/pm/polymarket/markets",
+      "GET /api/v1/pm/polymarket/markets/keyset",
+      "GET /api/v1/pm/polymarket/events",
+      "GET /api/v1/pm/polymarket/events/keyset",
+      "GET /api/v1/pm/polymarket/crypto-updown",
+      "GET /api/v1/pm/polymarket/market-price/{token_id}",
+      "GET /api/v1/pm/polymarket/candlesticks/{condition_id}",
+      "GET /api/v1/pm/polymarket/candlesticks/token/{token_id}",
+      "GET /api/v1/pm/polymarket/volume-chart/{condition_id}",
+      "GET /api/v1/pm/polymarket/orderbooks",
+      "GET /api/v1/pm/polymarket/trades",
+      "GET /api/v1/pm/polymarket/activity",
+      "GET /api/v1/pm/polymarket/markets/{token_id}/volume",
+      "GET /api/v1/pm/polymarket/markets/{condition_id}/open_interest",
+      "GET /api/v1/pm/polymarket/positions",
+      "GET /api/v1/pm/polymarket/leaderboard",
+      "GET /api/v1/pm/polymarket/leaderboard/market/{condition_id}",
+      "GET /api/v1/pm/polymarket/cohorts/stats",
+      "GET /api/v1/pm/polymarket/market/{condition_id}/top-holders",
+      "GET /api/v1/pm/polymarket/wallet/{wallet}",
+      "GET /api/v1/pm/polymarket/wallet/{wallet}/markets",
+      "GET /api/v1/pm/polymarket/wallet/{wallet}/similar",
+      "GET /api/v1/pm/polymarket/wallet/pnl/{wallet}",
+      "GET /api/v1/pm/polymarket/wallet/positions/{wallet}",
+      "GET /api/v1/pm/polymarket/wallet/volume-chart/{wallet}",
+      "GET /api/v1/pm/polymarket/wallets/profiles",
+      "GET /api/v1/pm/polymarket/wallets/filter",
+      "GET /api/v1/pm/polymarket/market/{condition_id}/smart-money",
+      "GET /api/v1/pm/polymarket/markets/smart-activity",
+      "GET /api/v1/pm/kalshi/markets",
+      "GET /api/v1/pm/kalshi/trades",
+      "GET /api/v1/pm/kalshi/orderbooks",
+      "GET /api/v1/pm/binance/candles/{symbol}",
+      "GET /api/v1/pm/binance/ticks/{symbol}",
+      "GET /api/v1/pm/markets/search",
+      "GET /api/v1/pm/limitless/markets",
+      "GET /api/v1/pm/limitless/orderbooks",
+      "GET /api/v1/pm/opinion/markets",
+      "GET /api/v1/pm/opinion/orderbooks",
+      "GET /api/v1/pm/predictfun/markets",
+      "GET /api/v1/pm/predictfun/orderbooks",
+      "GET /api/v1/pm/polymarket/uma/markets",
+      "GET /api/v1/pm/polymarket/uma/market/{condition_id}",
+      "GET /api/v1/pm/polymarket/wallet/identity/{wallet}",
+      "POST /api/v1/pm/polymarket/wallet/identities",
+      "GET /api/v1/pm/polymarket/wallet/{address}/cluster",
+      "POST /api/v1/exa/search",
+      "POST /api/v1/exa/find-similar",
+      "POST /api/v1/exa/contents",
+      "POST /api/v1/exa/answer",
+      "GET /api/v1/defillama/protocols",
+      "GET /api/v1/defillama/protocol/{slug}",
+      "GET /api/v1/defillama/chains",
+      "GET /api/v1/defillama/yields",
+      "GET /api/v1/defillama/prices/{coins}",
+      "GET /api/v1/zerox/price",
+      "GET /api/v1/zerox/quote",
+      "GET /api/v1/zerox/gasless/price",
+      "GET /api/v1/zerox/gasless/quote",
+      "POST /api/v1/zerox/gasless/submit",
+      "GET /api/v1/zerox/gasless/status/{trade_hash}",
+      "GET /api/v1/zerox/gasless/approval-tokens",
+      "GET /api/v1/zerox/gasless/chains",
+      "GET /api/v1/zerox/swap/chains",
+      "GET /api/v1/crypto/price/BTC-USD",
+      "GET /api/v1/crypto/price/ETH-USD",
+      "GET /api/v1/crypto/price/SOL-USD",
+      "GET /api/v1/fx/price/EUR-USD",
+      "GET /api/v1/fx/price/GBP-USD",
+      "GET /api/v1/commodity/price/XAU-USD",
+      "GET /api/v1/commodity/price/XAG-USD",
+      "GET /api/v1/crypto/history/BTC-USD",
+      "GET /api/v1/fx/history/EUR-USD",
+      "GET /api/v1/commodity/history/XAU-USD",
+      "GET /api/v1/crypto/list",
+      "GET /api/v1/fx/list",
+      "GET /api/v1/commodity/list",
+      "GET /api/v1/usstock/list"
+    ],
+    "x402Version": 2,
+    "endpoints": [
+      {
+        "resource": "https://blockrun.ai/api/v1/chat/completions",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.002-$89.881",
+        "description": "Chat Completions"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/messages",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.002-$89.881",
+        "description": "Anthropic Messages"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/responses",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.002-$89.881",
+        "description": "OpenAI Responses API"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/search",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.081",
+        "description": "Grok Live Search"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/images/generations",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.016-$0.561",
+        "description": "Image Generation"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/images/image2image",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.016-$0.561",
+        "description": "Image-to-Image Edit"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/audio/generations",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.200-$0.201",
+        "description": "Music Generation"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/audio/speech",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.001-$2.100",
+        "description": "Text-to-Speech (ElevenLabs)"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/audio/sound-effects",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0535",
+        "description": "Sound Effects (ElevenLabs)"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/videos/generations",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.752-$9.469",
+        "description": "Submit Video Generation Job"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/exa/search",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.011",
+        "description": "Exa Web Search"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/exa/find-similar",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.011",
+        "description": "Exa Find Similar"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/rpc/ethereum",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.003",
+        "description": "Multi-chain RPC"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/exa/contents",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.003-$0.201",
+        "description": "Exa Contents"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/exa/answer",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.011",
+        "description": "Exa Answer"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/modal/sandbox/create",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.011-$1.500",
+        "description": "Create Modal Sandbox"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/modal/sandbox/exec",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.002",
+        "description": "Execute In Modal Sandbox"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/modal/sandbox/status",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.002",
+        "description": "Check Modal Sandbox Status"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/modal/sandbox/terminate",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.002",
+        "description": "Terminate Modal Sandbox"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/voice/call",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.541",
+        "description": "Initiate AI Voice Call"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/phone/numbers/buy",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$5.001",
+        "description": "Provision Phone Number (30-day lease)"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/phone/numbers/renew",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$5.001",
+        "description": "Renew Phone Number Lease"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/phone/numbers/list",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.002",
+        "description": "List Wallet-Owned Phone Numbers"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/phone/lookup",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.011",
+        "description": "Phone Number Carrier Lookup"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/phone/lookup/fraud",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.051",
+        "description": "Phone Number Fraud Lookup"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/defillama/protocols",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0060",
+        "description": "DefiLlama — protocols"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/defillama/protocol/aave",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0060",
+        "description": "DefiLlama — protocol"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/defillama/chains",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0060",
+        "description": "DefiLlama — chains"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/defillama/yields",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0060",
+        "description": "DefiLlama — yields"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/defillama/prices/coingecko:bitcoin",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0020",
+        "description": "DefiLlama — prices"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/markets",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Query Polymarket markets with filtering, sorting, and pagination"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/markets/keyset",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "List Polymarket markets with cursor-based keyset pagination (same filters as /polymarket/markets)"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/events",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "List Polymarket events with filtering and sorting"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/events/keyset",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "List Polymarket events with cursor-based keyset pagination"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/crypto-updown",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "List crypto up/down prediction markets"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/market-price/0",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get current or historical price for a specific token"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/candlesticks/0x0000000000000000000000000000000000000000000000000000000000000000",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get historical OHLCV candlestick data for a market"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/candlesticks/token/0",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get historical OHLCV candlestick data for a single outcome token"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/volume-chart/0x0000000000000000000000000000000000000000000000000000000000000000",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get volume chart with YES/NO breakdown for a market"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/orderbooks",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get historical orderbook snapshots for a token"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/trades",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Query historical Polymarket trade data with flexible filtering"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/activity",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Fetch trading activity (merges, splits, redeems) for a user"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/markets/0/volume",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get historical cumulative volume data for a market"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/markets/0x0000000000000000000000000000000000000000000000000000000000000000/open_interest",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get historical open interest data for a market"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/positions",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Fetch all user positions with filtering and pagination"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/leaderboard",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get the global leaderboard of smart wallets"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/leaderboard/market/0x0000000000000000000000000000000000000000000000000000000000000000",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get leaderboard for a specific market"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/cohorts/stats",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Compare performance across trading style cohorts"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/market/0x0000000000000000000000000000000000000000000000000000000000000000/top-holders",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get top holders for a specific market ranked by position size"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/wallet/0x0000000000000000000000000000000000000000",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get a complete smart wallet profile with all metrics"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/wallet/0x0000000000000000000000000000000000000000/markets",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get per-market performance breakdown for a wallet"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/wallet/0x0000000000000000000000000000000000000000/similar",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Find wallets with similar market portfolios"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/wallet/pnl/0x0000000000000000000000000000000000000000",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get P&L summary and realized P&L time series for a wallet"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/wallet/positions/0x0000000000000000000000000000000000000000",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get open and historical positions for a wallet address"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/wallet/volume-chart/0x0000000000000000000000000000000000000000",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get volume chart broken down by BUY/SELL side for a wallet"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/wallets/profiles",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Batch retrieve wallet profiles for multiple addresses"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/wallets/filter",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Filter wallets by market trades with AND/OR logic"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/market/0x0000000000000000000000000000000000000000000000000000000000000000/smart-money",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "View smart money positioning on a specific market"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/markets/smart-activity",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Discover markets where high-performing wallets are active"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/kalshi/markets",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Query Kalshi markets with filtering, sorting, and pagination"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/kalshi/trades",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Fetch historical Kalshi trade data"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/kalshi/orderbooks",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Fetch historical orderbook snapshots for a Kalshi market"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/binance/candles/BTCUSDT",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get OHLCV candlestick data for a Binance trading pair"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/binance/ticks/BTCUSDT",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get raw book ticker data at microsecond granularity"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/markets/search",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Search markets across Polymarket, Kalshi, Limitless, Opinion, and Predict.Fun in a single call. Not charged when no market matches"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/limitless/markets",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "List Limitless markets with filtering and sorting"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/limitless/orderbooks",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Fetch historical orderbook snapshots for a Limitless market"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/opinion/markets",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "List Opinion markets with filtering and sorting"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/opinion/orderbooks",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Fetch historical orderbook snapshots for an Opinion market"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/predictfun/markets",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "List Predict.Fun markets with filtering and sorting"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/predictfun/orderbooks",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Fetch historical orderbook snapshots for a Predict.Fun market"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/uma/markets",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "List UMA oracle questions filtered by state (proposed, disputed, resolved, …)"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/uma/market/0x0000000000000000000000000000000000000000000000000000000000000000",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Get current UMA oracle status and event timeline for a single market"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/wallet/identity/0x0000000000000000000000000000000000000000",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Fetch identity and profile metadata for a wallet address"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/wallet/identities",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Bulk identity lookup for up to 200 wallet addresses (POST body: {addresses: [..]})"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/pm/polymarket/wallet/0x0000000000000000000000000000000000000000/cluster",
+        "method": "GET",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.0085",
+        "description": "Discover wallets connected to a seed address via on-chain transfers and identity proofs"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/rpc/base",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.003",
+        "description": "base RPC"
+      },
+      {
+        "resource": "https://blockrun.ai/api/v1/rpc/solana",
+        "method": "POST",
+        "scheme": "exact",
+        "networks": [
+          "eip155:8453"
+        ],
+        "price": "$0.003",
+        "description": "solana RPC"
+      }
+    ],
+    "name": "BlockRun",
+    "description": "AI routing & payment layer. Access 91 LLMs and third-party data & runtime services via x402 micropayments on Base. No API keys required.",
+    "apiVersion": "0.1.0",
+    "network": "mainnet",
+    "instructions": "BlockRun is an AI routing and payment layer. Every paid resource below is billed per request in USDC via x402 — no API keys, no accounts, no subscriptions.\n\n## No wallet? Start free\n9 open-weight chat models are free and require no wallet, no key and no signup. POST /api/v1/chat/completions with one of the free model ids and no payment header. Use this path first when a language model is all you need.\n\n## Getting able to pay\n1. A wallet is auto-created on first use by the MCP server and by every SDK. The private key stays on the caller's machine and signs x402 headers locally; it is never sent to BlockRun.\n2. To fund with a card, POST /api/v1/onramp/token with {\"address\":\"0x...\"}. It is free and settles nothing — the x402 signature proves you control the wallet, so the address must match the signer — and it returns a one-time Coinbase Onramp link.\n3. Or send USDC directly to that address on Base or Solana.\n\n## Paying for a request\nCall the endpoint with no payment header, read the requirements off the 402, sign, and retry with X-PAYMENT. Prices in this document are indicative: read the 402 for the amount that will actually be charged, and GET /api/v1/models for live per-token pricing rather than trusting a cached figure.\n\n## What you pay for\nYou pay for the upstream round trip. If a call fails on OUR side — the provider is down, times out, or returns a JSON-RPC -32603 — it does not settle, so a retry is free. If the upstream rejects what you sent (unknown method, invalid params, a reverted call), it does settle: we made the call on your behalf. Requests we can reject LOCALLY, before contacting anyone, are always free. Check the balance before an expensive call (video generation is the priciest category), but do not avoid retrying a call that failed on our side.\n\n## Further reading\nhttps://blockrun.ai/skill.md — install and wallet setup, as an agent skill.\nhttps://blockrun.ai/agent.md — HTTP reference for calling the API directly.\nhttps://blockrun.ai/llms.txt — full catalog: every endpoint with its current price.",
+    "resource": {
+      "url": "https://blockrun.ai/api",
+      "description": "BlockRun AI Gateway API",
+      "mimeType": "application/json"
+    },
+    "services": [
+      {
+        "name": "LLM Chat Completion",
+        "endpoint": "/api/v1/chat/completions",
+        "method": "POST",
+        "description": "Access 91 frontier LLMs with pay-per-request x402 micropayments",
+        "models": [
+          {
+            "id": "openai/gpt-6-astra",
+            "name": "GPT-6 Astra",
+            "provider": "openai",
+            "description": "OpenAI flagship — GPT-6 generation, tuned for long-horizon agentic work and computer use. 1M context",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-6.1-sol",
+            "name": "GPT-6.1 Sol",
+            "provider": "openai",
+            "description": "Refreshed GPT-6 Sol — complex coding and agentic workflows below the Astra flagship, April 2026 knowledge. 1M context",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-6-sol",
+            "name": "GPT-6 Sol",
+            "provider": "openai",
+            "description": "Cost-efficient GPT-6 tier — complex coding and agentic workflows below the Astra flagship. 1M context",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-6-luna",
+            "name": "GPT-6 Luna",
+            "provider": "openai",
+            "description": "Fast, low-cost GPT-6 tier — high-volume chat, classification and lightweight agentic work. 1M context",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.6-sol",
+            "name": "GPT-5.6 Sol",
+            "provider": "openai",
+            "description": "Top GPT-5.6 tier — deepest reasoning for complex coding, agentic workflows, and long-horizon problems. 1M context",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.6-terra",
+            "name": "GPT-5.6 Terra",
+            "provider": "openai",
+            "description": "Balanced GPT-5.6 tier — everyday coding, reasoning, and agentic tasks at half the flagship price. 1M context",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.6-luna",
+            "name": "GPT-5.6 Luna",
+            "provider": "openai",
+            "description": "Cost-efficient GPT-5.6 tier for high-volume, latency-sensitive chat and lightweight agentic workflows. 1M context",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.6-sol-pro",
+            "name": "GPT-5.6 Sol Pro",
+            "provider": "openai",
+            "description": "Highest-capability GPT-5.6 — Sol with pro reasoning mode for the hardest problems and long-running agentic work. 1M context",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.6-terra-pro",
+            "name": "GPT-5.6 Terra Pro",
+            "provider": "openai",
+            "description": "GPT-5.6 Terra with pro reasoning mode — deeper responses on complex tasks at half the standard Terra rate. 1M context",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.6-luna-pro",
+            "name": "GPT-5.6 Luna Pro",
+            "provider": "openai",
+            "description": "GPT-5.6 Luna with pro reasoning mode — budget tier with deeper reasoning for high-volume workloads. 1M context",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.5",
+            "name": "GPT-5.5",
+            "provider": "openai",
+            "description": "First fully retrained base since GPT-4.5. 1M context, 128K output, native agent + computer use",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.5-pro",
+            "name": "GPT-5.5 Pro",
+            "provider": "openai",
+            "description": "Premium GPT-5.5 with maximum compute for the hardest problems",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/chat-latest",
+            "name": "ChatGPT Instant (GPT-5.5)",
+            "provider": "openai",
+            "description": "ChatGPT's default model — the rolling `chat-latest` alias, currently GPT-5.5 Instant. Tuned for speed and concision, same price as GPT-5.5",
+            "contextWindow": 128000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.4",
+            "name": "GPT-5.4",
+            "provider": "openai",
+            "description": "GPT-5.4 frontier model with 1M context, native computer use, and thinking mode",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.4-pro",
+            "name": "GPT-5.4 Pro",
+            "provider": "openai",
+            "description": "Premium GPT-5.4 with maximum compute for the hardest problems",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.1",
+            "name": "GPT-5.1",
+            "provider": "openai",
+            "description": "Frontier model with 400K context and configurable reasoning effort",
+            "contextWindow": 400000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.2",
+            "name": "GPT-5.2",
+            "provider": "openai",
+            "description": "Frontier model with 400K context and adaptive reasoning",
+            "contextWindow": 400000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.4-mini",
+            "name": "GPT-5.4 Mini",
+            "provider": "openai",
+            "description": "Strongest mini model for coding, computer use, and subagents with GPT-5.4 capabilities",
+            "contextWindow": 400000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5-mini",
+            "name": "GPT-5 Mini",
+            "provider": "openai",
+            "description": "Cost-optimized reasoning and chat",
+            "contextWindow": 200000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "coding"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.4-nano",
+            "name": "GPT-5.4 Nano",
+            "provider": "openai",
+            "description": "Fastest and most affordable GPT-5.4 model for high-throughput tasks",
+            "contextWindow": 1050000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.2-pro",
+            "name": "GPT-5.2 Pro",
+            "provider": "openai",
+            "description": "Uses more compute for consistently better answers",
+            "contextWindow": 400000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-5.3-codex",
+            "name": "GPT-5.3 Codex",
+            "provider": "openai",
+            "description": "Industry-leading agentic coding model. 400K context, reasoning, tool use, and complex execution",
+            "contextWindow": 400000,
+            "maxOutput": 128000,
+            "categories": [
+              "coding",
+              "reasoning",
+              "chat"
+            ]
+          },
+          {
+            "id": "openai/gpt-4.1",
+            "name": "GPT-4.1",
+            "provider": "openai",
+            "description": "Latest GPT-4 generation model",
+            "contextWindow": 128000,
+            "maxOutput": 32768,
+            "categories": [
+              "chat",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-4.1-mini",
+            "name": "GPT-4.1 Mini",
+            "provider": "openai",
+            "description": "Fast and affordable GPT-4.1 model",
+            "contextWindow": 128000,
+            "maxOutput": 32768,
+            "categories": [
+              "chat",
+              "coding"
+            ]
+          },
+          {
+            "id": "openai/gpt-4o",
+            "name": "GPT-4o",
+            "provider": "openai",
+            "description": "Multimodal model with vision and audio",
+            "contextWindow": 128000,
+            "maxOutput": 16384,
+            "categories": [
+              "chat",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "openai/gpt-4o-mini",
+            "name": "GPT-4o Mini",
+            "provider": "openai",
+            "description": "Fast and affordable GPT-4o model",
+            "contextWindow": 128000,
+            "maxOutput": 16384,
+            "categories": [
+              "chat",
+              "coding"
+            ]
+          },
+          {
+            "id": "openai/o1",
+            "name": "o1",
+            "provider": "openai",
+            "description": "Advanced reasoning model for complex tasks",
+            "contextWindow": 200000,
+            "maxOutput": 100000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "openai/o3",
+            "name": "o3",
+            "provider": "openai",
+            "description": "o-series reasoning model with improved performance",
+            "contextWindow": 200000,
+            "maxOutput": 100000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "openai/o3-mini",
+            "name": "o3-mini",
+            "provider": "openai",
+            "description": "Efficient reasoning model for STEM tasks",
+            "contextWindow": 128000,
+            "maxOutput": 100000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "openai/o4-mini",
+            "name": "o4-mini",
+            "provider": "openai",
+            "description": "Efficient o4-generation reasoning model",
+            "contextWindow": 128000,
+            "maxOutput": 100000,
+            "categories": [
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "anthropic/claude-haiku-4.5",
+            "name": "Claude Haiku 4.5",
+            "provider": "anthropic",
+            "description": "Fastest and most efficient Claude, near-frontier intelligence",
+            "contextWindow": 200000,
+            "maxOutput": 64000,
+            "categories": [
+              "chat",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "anthropic/claude-sonnet-5.5",
+            "name": "Claude Sonnet 5.5",
+            "provider": "anthropic",
+            "description": "Newest Sonnet — fast, capable everyday coding and agent work at Sonnet cost. 1M context, 128k output, adaptive thinking, vision",
+            "contextWindow": 1000000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "coding",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "anthropic/claude-sonnet-5",
+            "name": "Claude Sonnet 5",
+            "provider": "anthropic",
+            "description": "Sonnet 5 — near-Opus coding/agentic quality at Sonnet cost. 1M context, 128k output, adaptive thinking, vision",
+            "contextWindow": 1000000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "coding",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "anthropic/claude-sonnet-4.6",
+            "name": "Claude Sonnet 4.6",
+            "provider": "anthropic",
+            "description": "Sonnet 4.6 — a balance of intelligence, speed, and cost",
+            "contextWindow": 1000000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "coding",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "anthropic/claude-sonnet-4.5",
+            "name": "Claude Sonnet 4.5",
+            "provider": "anthropic",
+            "description": "Sonnet 4.5 — strong coding and agentic performance, vision",
+            "contextWindow": 200000,
+            "maxOutput": 64000,
+            "categories": [
+              "chat",
+              "coding",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "anthropic/claude-opus-4.5",
+            "name": "Claude Opus 4.5",
+            "provider": "anthropic",
+            "description": "Claude Opus 4.5 — enhanced reasoning and creativity",
+            "contextWindow": 200000,
+            "maxOutput": 64000,
+            "categories": [
+              "chat",
+              "coding",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "anthropic/claude-opus-4.7",
+            "name": "Claude Opus 4.7",
+            "provider": "anthropic",
+            "description": "Powerful Claude Opus for complex reasoning and agentic coding. 1M context, 128k output, adaptive thinking",
+            "contextWindow": 1000000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "coding",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "anthropic/claude-fable-5.1",
+            "name": "Claude Fable 5.1",
+            "provider": "anthropic",
+            "description": "Anthropic's most capable model — successor to Fable 5 in the same tier at the same price, for the most demanding reasoning and long-horizon agentic work. 1M context, 128K output, always-on thinking",
+            "contextWindow": 1000000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "coding",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "anthropic/claude-fable-5",
+            "name": "Claude Fable 5",
+            "provider": "anthropic",
+            "description": "Mythos-class tier above Opus, for the most demanding reasoning and long-horizon agentic work. 1M context, 128K output, always-on thinking",
+            "contextWindow": 1000000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "coding",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "anthropic/claude-opus-4.8",
+            "name": "Claude Opus 4.8",
+            "provider": "anthropic",
+            "description": "Most capable Claude 4-series Opus for complex reasoning and agentic coding. 1M context, 128k output, adaptive thinking",
+            "contextWindow": 1000000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "coding",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "anthropic/claude-opus-5",
+            "name": "Claude Opus 5",
+            "provider": "anthropic",
+            "description": "Opus 5 — step-change over Opus 4.8 for deep reasoning and agentic coding at the same price. 1M context, 128k output, adaptive thinking",
+            "contextWindow": 1000000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "coding",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "anthropic/claude-opus-5.5",
+            "name": "Claude Opus 5.5",
+            "provider": "anthropic",
+            "description": "Newest Opus — Opus-class deep reasoning and agentic coding at a lower price than Opus 5. 1M context, 128k output, always-on adaptive thinking, vision",
+            "contextWindow": 1000000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "coding",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "google/gemini-4-argon",
+            "name": "Gemini 4 Argon",
+            "provider": "google",
+            "description": "Google's frontier reasoning model, built for long multi-step agent work, complex software engineering and deep math and science problems",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "google/gemini-3.1-pro",
+            "name": "Gemini 3.1 Pro",
+            "provider": "google",
+            "description": "Gemini 3.1 Pro with improved thinking, token efficiency, and agentic capabilities. Optimized for software engineering (requires new SDK)",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "google/gemini-3-flash-preview",
+            "name": "Gemini 3 Flash Preview",
+            "provider": "google",
+            "description": "Frontier-class performance with Pro-level intelligence at Flash speed and pricing. Includes thinking mode (requires new SDK)",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "google/gemini-3.8-flash",
+            "name": "Gemini 3.8 Flash",
+            "provider": "google",
+            "description": "Newest-generation Flash with built-in thinking mode — frontier-class quality at Flash speed",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "google/gemini-3.6-flash",
+            "name": "Gemini 3.6 Flash",
+            "provider": "google",
+            "description": "Gemini 3.6 Flash with built-in thinking mode — frontier-class quality at Flash speed",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "google/gemini-3.5-flash",
+            "name": "Gemini 3.5 Flash",
+            "provider": "google",
+            "description": "Gemini 3.5 Flash with built-in thinking mode — frontier-class quality at Flash speed",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "google/gemini-2.5-pro",
+            "name": "Gemini 2.5 Pro",
+            "provider": "google",
+            "description": "Gemini 2.5 Pro — strong reasoning, coding, and mathematics",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "google/gemini-2.5-flash",
+            "name": "Gemini 2.5 Flash",
+            "provider": "google",
+            "description": "Fast and efficient Gemini model with vision support",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "google/gemini-3.5-flash-lite",
+            "name": "Gemini 3.5 Flash Lite",
+            "provider": "google",
+            "description": "Latest Flash Lite — ultra-fast, lightweight Gemini with thinking mode for high-throughput tasks",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning"
+            ]
+          },
+          {
+            "id": "google/gemini-3.1-flash-lite",
+            "name": "Gemini 3.1 Flash Lite",
+            "provider": "google",
+            "description": "Ultra-fast and lightweight Gemini 3.1 model with thinking mode for high-throughput tasks",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning"
+            ]
+          },
+          {
+            "id": "google/gemini-2.5-flash-lite",
+            "name": "Gemini 2.5 Flash Lite",
+            "provider": "google",
+            "description": "Most economical Gemini model - ultra-fast and lightweight (requires new SDK)",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat"
+            ]
+          },
+          {
+            "id": "deepseek/deepseek-v4-flash-vision-exp",
+            "name": "DeepSeek V4 Flash Vision",
+            "provider": "deepseek",
+            "description": "DeepSeek V4 Flash Vision — 1M context with text and image input. Experimental multimodal tier of the V4 Flash family.",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "deepseek/deepseek-v4-pro",
+            "name": "DeepSeek V4 Pro",
+            "provider": "deepseek",
+            "description": "DeepSeek V4 flagship — 1.6T MoE / 49B active, 1M context. Strongest open-weight reasoner. Thinking mode default.",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "deepseek/deepseek-v4.1-flash",
+            "name": "DeepSeek V4.1 Flash",
+            "provider": "deepseek",
+            "description": "DeepSeek V4.1 Flash in non-thinking mode — 1M context at $0.14 in / $0.28 out. Production-grade reliability and 5MB request bodies.",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "deepseek/deepseek-chat",
+            "name": "DeepSeek Chat (V4.1 Flash)",
+            "provider": "deepseek",
+            "description": "Compatibility id for DeepSeek V4.1 Flash in non-thinking mode ($0.14 in / $0.28 out) — same model, price and routing as deepseek/deepseek-v4.1-flash. Production-grade reliability and 5MB request bodies.",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "deepseek/deepseek-reasoner",
+            "name": "DeepSeek Reasoner (V4.1 Flash)",
+            "provider": "deepseek",
+            "description": "Compatibility id for DeepSeek V4.1 Flash in thinking mode for reasoning tasks ($0.14 in / $0.28 out). Same upstream as deepseek/deepseek-v4.1-flash but with thinking enabled by default.",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "moonshot/kimi-k3.1-pro",
+            "name": "Kimi K3.1 Pro",
+            "provider": "moonshot",
+            "description": "Moonshot's flagship — post-trained successor to Kimi K3 for long-horizon coding and agents. 1M context, image + text input, returns reasoning_content.",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "zai/glm-5.3",
+            "name": "GLM-5.3",
+            "provider": "zai",
+            "description": "Z.AI's flagship — 1M-token context with always-on reasoning, strong at long-horizon coding. Verified live on Z.AI.",
+            "contextWindow": 1000000,
+            "maxOutput": 131072,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "zai/glm-5.3-flash",
+            "name": "GLM-5.3 Flash",
+            "provider": "zai",
+            "description": "Z.AI's first natively multimodal GLM-5 — 320B/18B MoE with image input, 1M-token context, and always-on reasoning at value-tier pricing. Verified live on Z.AI.",
+            "contextWindow": 1000000,
+            "maxOutput": 131072,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "zai/glm-5.2",
+            "name": "GLM-5.2",
+            "provider": "zai",
+            "description": "Z.AI GLM-5.2 — 1M-token context, strong open-source long-horizon coding. Verified live on Z.AI.",
+            "contextWindow": 1000000,
+            "maxOutput": 131072,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "zai/glm-5.1",
+            "name": "GLM-5.1",
+            "provider": "zai",
+            "description": "Z.AI's GLM-5.1 — #1 open source on SWE-Bench Pro, 8-hour autonomous execution. 200K context",
+            "contextWindow": 200000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "zai/glm-5",
+            "name": "GLM-5",
+            "provider": "zai",
+            "description": "Z.AI's foundation model with 200K context. Strong reasoning and agentic capabilities",
+            "contextWindow": 200000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "zai/glm-5-turbo",
+            "name": "GLM-5 Turbo",
+            "provider": "zai",
+            "description": "Optimized GLM-5 variant with faster inference",
+            "contextWindow": 200000,
+            "maxOutput": 128000,
+            "categories": [
+              "chat",
+              "reasoning"
+            ]
+          },
+          {
+            "id": "xai/grok-4.3",
+            "name": "Grok 4.3",
+            "provider": "xai",
+            "description": "xAI's Grok 4.3 reasoning model. 1M context, vision-capable, tuned for agentic workflows and instruction-following.",
+            "contextWindow": 1000000,
+            "maxOutput": 16384,
+            "categories": [
+              "reasoning",
+              "coding",
+              "vision",
+              "chat"
+            ]
+          },
+          {
+            "id": "xai/grok-build-0.1",
+            "name": "Grok Build 0.1",
+            "provider": "xai",
+            "description": "xAI's fast agentic coding model, trained for interactive software-engineering workflows. 256K context, text + image input.",
+            "contextWindow": 256000,
+            "maxOutput": 16384,
+            "categories": [
+              "coding",
+              "chat"
+            ]
+          },
+          {
+            "id": "xai/grok-4.7",
+            "name": "Grok 4.7",
+            "provider": "xai",
+            "description": "xAI's flagship Grok 4.7 — 500K context, vision, always-on reasoning with selectable effort (low to xhigh). Supports Live Search (+$0.30 per call)",
+            "contextWindow": 500000,
+            "maxOutput": 16384,
+            "categories": [
+              "reasoning",
+              "coding",
+              "vision",
+              "chat",
+              "search"
+            ]
+          },
+          {
+            "id": "xai/grok-4.6",
+            "name": "Grok 4.6",
+            "provider": "xai",
+            "description": "xAI's Grok 4.6 — 500K context, chain-of-thought reasoning with selectable effort. Supports Live Search (+$0.30 per call)",
+            "contextWindow": 500000,
+            "maxOutput": 16384,
+            "categories": [
+              "reasoning",
+              "coding",
+              "vision",
+              "chat",
+              "search"
+            ]
+          },
+          {
+            "id": "xai/grok-4.5",
+            "name": "Grok 4.5",
+            "provider": "xai",
+            "description": "xAI's Grok 4.5 — 500K context, vision-capable, chain-of-thought reasoning. Supports Live Search (+$0.30 per call)",
+            "contextWindow": 500000,
+            "maxOutput": 16384,
+            "categories": [
+              "reasoning",
+              "coding",
+              "vision",
+              "chat",
+              "search"
+            ]
+          },
+          {
+            "id": "minimax/minimax-m2.7",
+            "name": "MiniMax M2.7",
+            "provider": "minimax",
+            "description": "MiniMax's M2.7 reasoning model with recursive self-improvement. Great value for complex tasks (~60 tps)",
+            "contextWindow": 204800,
+            "maxOutput": 16384,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "minimax/minimax-m3",
+            "name": "MiniMax M3",
+            "provider": "minimax",
+            "description": "MiniMax's M3 flagship — 1M context, strong reasoning + coding.",
+            "contextWindow": 1048576,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "qwen/qwen3.8-max",
+            "name": "Qwen3.8 Max",
+            "provider": "qwen",
+            "description": "Alibaba's Qwen3.8 Max — current flagship of the Qwen line. 1M context, 131K output.",
+            "contextWindow": 1000000,
+            "maxOutput": 131072,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "qwen/qwen3.7-max",
+            "name": "Qwen3.7 Max",
+            "provider": "qwen",
+            "description": "Alibaba's Qwen3.7 Max tier. 1M context, strong reasoning, coding, and agentic tool use. Live-verified 2026-07-20.",
+            "contextWindow": 1000000,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "qwen/qwen3.7-plus",
+            "name": "Qwen3.7 Plus",
+            "provider": "qwen",
+            "description": "Alibaba's balanced Qwen tier — 1M context with reasoning, coding, and agentic tool use at a fraction of the Max price",
+            "contextWindow": 1000000,
+            "maxOutput": 131072,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "qwen/qwen3.7-flash",
+            "name": "Qwen3.7 Flash",
+            "provider": "qwen",
+            "description": "Alibaba's fastest Qwen tier — 1M context reasoning for high-volume, latency-sensitive workloads",
+            "contextWindow": 1000000,
+            "maxOutput": 65536,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "qwen/qwen3.8-flash",
+            "name": "Qwen3.8 Flash",
+            "provider": "qwen",
+            "description": "Alibaba's Qwen3.8 Flash — 125B MoE with hybrid attention, 1M context, image input. Outperforms the Qwen3.7 Plus tier at a lower price.",
+            "contextWindow": 1000000,
+            "maxOutput": 131072,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "tencent/hy4-preview",
+            "name": "Tencent Hy4 Preview",
+            "provider": "tencent",
+            "description": "Tencent's Hy4 — 770B mixture-of-experts, Apache 2.0, 1M context. A large open flagship at a fraction of closed-model pricing.",
+            "contextWindow": 1048576,
+            "maxOutput": 64000,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "xiaomi/mimo-v2.5",
+            "name": "MiMo V2.5",
+            "provider": "xiaomi",
+            "description": "Xiaomi's MiMo V2.5 — 310B sparse MoE, natively multimodal, 1M context. Accepts text and images.",
+            "contextWindow": 1048576,
+            "maxOutput": 131072,
+            "categories": [
+              "chat",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "xiaomi/mimo-v2.5-pro",
+            "name": "Xiaomi MiMo-V2.5 Pro",
+            "provider": "xiaomi",
+            "description": "Xiaomi's MiMo-V2.5 Pro — 1M context reasoning model, priced well below the frontier tier.",
+            "contextWindow": 1048576,
+            "maxOutput": 131072,
+            "categories": [
+              "chat",
+              "reasoning"
+            ]
+          },
+          {
+            "id": "nvidia/nemotron-3-super-120b",
+            "name": "Nemotron 3.5 Super 120B (Free)",
+            "provider": "nvidia",
+            "description": "NVIDIA Nemotron 3.5 Super VL: MoE model (12B active params) with thinking mode. Reads images, fast and capable reasoning",
+            "contextWindow": 131072,
+            "maxOutput": 16384,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+            "name": "Nemotron 3 Nano Omni (Free)",
+            "provider": "nvidia",
+            "description": "NVIDIA's multimodal reasoning Nemotron Nano Omni, free. 31B / 3.2B active MoE. Accepts text, images, video, audio. ChartQA 90.3, DocVQA 95.6, MMMU 70.8 — the only free model in our catalog that takes video and audio as well as images",
+            "contextWindow": 256000,
+            "maxOutput": 16384,
+            "categories": [
+              "chat",
+              "reasoning",
+              "vision"
+            ]
+          },
+          {
+            "id": "nvidia/nemotron-3.5-lightning",
+            "name": "Nemotron 3.5 Lightning (Free)",
+            "provider": "nvidia",
+            "description": "NVIDIA Nemotron 3.5 Lightning 30B-A3B, free. Thinking-mode reasoning with a 1M-token context.",
+            "contextWindow": 1000000,
+            "maxOutput": 16384,
+            "categories": [
+              "chat",
+              "reasoning"
+            ]
+          },
+          {
+            "id": "nvidia/nemotron-3-ultra-550b",
+            "name": "Nemotron 3 Ultra 550B (Free)",
+            "provider": "nvidia",
+            "description": "NVIDIA Nemotron 3 Ultra 550B-A55B, free. 550B total / 55B active MoE with a 1M-token context — the largest free model in the catalog.",
+            "contextWindow": 1000000,
+            "maxOutput": 16384,
+            "categories": [
+              "chat",
+              "reasoning"
+            ]
+          },
+          {
+            "id": "cohere/north-mini-code",
+            "name": "Cohere North Mini Code (Free)",
+            "provider": "cohere",
+            "description": "Cohere's North Mini Code, free. Compact coding model, 256K context, sub-second responses.",
+            "contextWindow": 256000,
+            "maxOutput": 16384,
+            "categories": [
+              "chat",
+              "coding"
+            ]
+          },
+          {
+            "id": "poolside/laguna-xs-2.1",
+            "name": "Poolside Laguna XS 2.1 (Free)",
+            "provider": "nvidia",
+            "description": "Poolside Laguna XS 2.1 hosted free by NVIDIA. Fast compact coding model (~161 tok/s).",
+            "contextWindow": 131072,
+            "maxOutput": 16384,
+            "categories": [
+              "chat",
+              "coding"
+            ]
+          },
+          {
+            "id": "poolside/laguna-s-2.1",
+            "name": "Laguna S 2.1",
+            "provider": "poolside",
+            "description": "Poolside's Laguna S 2.1 — 118B open-weight coding model, 1M context, very cheap per token.",
+            "contextWindow": 1048576,
+            "maxOutput": 131072,
+            "categories": [
+              "chat",
+              "coding"
+            ]
+          },
+          {
+            "id": "mistral/mistral-large-4",
+            "name": "Mistral Large 4",
+            "provider": "mistral",
+            "description": "Mistral's flagship — multimodal reasoning model for coding and agentic work. 512K context, image input.",
+            "contextWindow": 524288,
+            "maxOutput": 262144,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding",
+              "vision"
+            ]
+          },
+          {
+            "id": "nvidia/muse-glimmer-30b",
+            "name": "Muse Glimmer 30B (Free)",
+            "provider": "nvidia",
+            "description": "Meta's Muse Glimmer 30B — Apache 2.0, 29.6B dense, hosted free by NVIDIA. Meta's open line after Llama.",
+            "contextWindow": 131072,
+            "maxOutput": 16384,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          },
+          {
+            "id": "nvidia/nemotron-3.5-bolt",
+            "name": "Nemotron 3.5 Bolt (Free)",
+            "provider": "nvidia",
+            "description": "NVIDIA's small, fast Nemotron 3.5 hosted free by NVIDIA. Answers in about a second, reads images and calls tools; no thinking pass. 131K context",
+            "contextWindow": 131072,
+            "maxOutput": 16384,
+            "categories": [
+              "chat",
+              "vision",
+              "coding"
+            ]
+          },
+          {
+            "id": "nvidia/minimax-m3.1-flash",
+            "name": "MiniMax M3.1 Flash (Free)",
+            "provider": "nvidia",
+            "description": "MiniMax's M3.1 Flash hosted free by NVIDIA. Reasons before it answers, calls tools, and takes a 1M context, usually in a few seconds.",
+            "contextWindow": 1048576,
+            "maxOutput": 16384,
+            "categories": [
+              "chat",
+              "reasoning",
+              "coding"
+            ]
+          }
+        ],
+        "pricing": {
+          "openai/gpt-6-astra": {
+            "inputPerMillionTokens": "10.00",
+            "outputPerMillionTokens": "50.00",
+            "currency": "USD"
+          },
+          "openai/gpt-6.1-sol": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "10.00",
+            "currency": "USD"
+          },
+          "openai/gpt-6-sol": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "10.00",
+            "currency": "USD"
+          },
+          "openai/gpt-6-luna": {
+            "inputPerMillionTokens": "0.10",
+            "outputPerMillionTokens": "0.50",
+            "currency": "USD"
+          },
+          "openai/gpt-5.6-sol": {
+            "inputPerMillionTokens": "4.00",
+            "outputPerMillionTokens": "20.00",
+            "currency": "USD"
+          },
+          "openai/gpt-5.6-terra": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "12.00",
+            "currency": "USD"
+          },
+          "openai/gpt-5.6-luna": {
+            "inputPerMillionTokens": "0.20",
+            "outputPerMillionTokens": "1.20",
+            "currency": "USD"
+          },
+          "openai/gpt-5.6-sol-pro": {
+            "inputPerMillionTokens": "4.00",
+            "outputPerMillionTokens": "20.00",
+            "currency": "USD"
+          },
+          "openai/gpt-5.6-terra-pro": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "12.00",
+            "currency": "USD"
+          },
+          "openai/gpt-5.6-luna-pro": {
+            "inputPerMillionTokens": "0.20",
+            "outputPerMillionTokens": "1.20",
+            "currency": "USD"
+          },
+          "openai/gpt-5.5": {
+            "inputPerMillionTokens": "5.00",
+            "outputPerMillionTokens": "30.00",
+            "currency": "USD"
+          },
+          "openai/gpt-5.5-pro": {
+            "inputPerMillionTokens": "30.00",
+            "outputPerMillionTokens": "180.00",
+            "currency": "USD"
+          },
+          "openai/chat-latest": {
+            "inputPerMillionTokens": "5.00",
+            "outputPerMillionTokens": "30.00",
+            "currency": "USD"
+          },
+          "openai/gpt-5.4": {
+            "inputPerMillionTokens": "2.50",
+            "outputPerMillionTokens": "15.00",
+            "currency": "USD"
+          },
+          "openai/gpt-5.4-pro": {
+            "inputPerMillionTokens": "30.00",
+            "outputPerMillionTokens": "180.00",
+            "currency": "USD"
+          },
+          "openai/gpt-5.1": {
+            "inputPerMillionTokens": "1.25",
+            "outputPerMillionTokens": "10.00",
+            "currency": "USD"
+          },
+          "openai/gpt-5.2": {
+            "inputPerMillionTokens": "1.75",
+            "outputPerMillionTokens": "14.00",
+            "currency": "USD"
+          },
+          "openai/gpt-5.4-mini": {
+            "inputPerMillionTokens": "0.75",
+            "outputPerMillionTokens": "4.50",
+            "currency": "USD"
+          },
+          "openai/gpt-5-mini": {
+            "inputPerMillionTokens": "0.25",
+            "outputPerMillionTokens": "2.00",
+            "currency": "USD"
+          },
+          "openai/gpt-5.4-nano": {
+            "inputPerMillionTokens": "0.20",
+            "outputPerMillionTokens": "1.25",
+            "currency": "USD"
+          },
+          "openai/gpt-5.2-pro": {
+            "inputPerMillionTokens": "21.00",
+            "outputPerMillionTokens": "168.00",
+            "currency": "USD"
+          },
+          "openai/gpt-5.3-codex": {
+            "inputPerMillionTokens": "1.75",
+            "outputPerMillionTokens": "14.00",
+            "currency": "USD"
+          },
+          "openai/gpt-4.1": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "8.00",
+            "currency": "USD"
+          },
+          "openai/gpt-4.1-mini": {
+            "inputPerMillionTokens": "0.40",
+            "outputPerMillionTokens": "1.60",
+            "currency": "USD"
+          },
+          "openai/gpt-4o": {
+            "inputPerMillionTokens": "2.50",
+            "outputPerMillionTokens": "10.00",
+            "currency": "USD"
+          },
+          "openai/gpt-4o-mini": {
+            "inputPerMillionTokens": "0.15",
+            "outputPerMillionTokens": "0.60",
+            "currency": "USD"
+          },
+          "openai/o1": {
+            "inputPerMillionTokens": "15.00",
+            "outputPerMillionTokens": "60.00",
+            "currency": "USD"
+          },
+          "openai/o3": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "8.00",
+            "currency": "USD"
+          },
+          "openai/o3-mini": {
+            "inputPerMillionTokens": "1.10",
+            "outputPerMillionTokens": "4.40",
+            "currency": "USD"
+          },
+          "openai/o4-mini": {
+            "inputPerMillionTokens": "1.10",
+            "outputPerMillionTokens": "4.40",
+            "currency": "USD"
+          },
+          "anthropic/claude-haiku-4.5": {
+            "inputPerMillionTokens": "1.00",
+            "outputPerMillionTokens": "5.00",
+            "currency": "USD"
+          },
+          "anthropic/claude-sonnet-5.5": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "10.00",
+            "currency": "USD"
+          },
+          "anthropic/claude-sonnet-5": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "10.00",
+            "currency": "USD"
+          },
+          "anthropic/claude-sonnet-4.6": {
+            "inputPerMillionTokens": "3.00",
+            "outputPerMillionTokens": "15.00",
+            "currency": "USD"
+          },
+          "anthropic/claude-sonnet-4.5": {
+            "inputPerMillionTokens": "3.00",
+            "outputPerMillionTokens": "15.00",
+            "currency": "USD"
+          },
+          "anthropic/claude-opus-4.5": {
+            "inputPerMillionTokens": "5.00",
+            "outputPerMillionTokens": "25.00",
+            "currency": "USD"
+          },
+          "anthropic/claude-opus-4.7": {
+            "inputPerMillionTokens": "5.00",
+            "outputPerMillionTokens": "25.00",
+            "currency": "USD"
+          },
+          "anthropic/claude-fable-5.1": {
+            "inputPerMillionTokens": "10.00",
+            "outputPerMillionTokens": "50.00",
+            "currency": "USD"
+          },
+          "anthropic/claude-fable-5": {
+            "inputPerMillionTokens": "10.00",
+            "outputPerMillionTokens": "50.00",
+            "currency": "USD"
+          },
+          "anthropic/claude-opus-4.8": {
+            "inputPerMillionTokens": "5.00",
+            "outputPerMillionTokens": "25.00",
+            "currency": "USD"
+          },
+          "anthropic/claude-opus-5": {
+            "inputPerMillionTokens": "5.00",
+            "outputPerMillionTokens": "25.00",
+            "currency": "USD"
+          },
+          "anthropic/claude-opus-5.5": {
+            "inputPerMillionTokens": "4.00",
+            "outputPerMillionTokens": "20.00",
+            "currency": "USD"
+          },
+          "google/gemini-4-argon": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "10.00",
+            "currency": "USD"
+          },
+          "google/gemini-3.1-pro": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "12.00",
+            "currency": "USD"
+          },
+          "google/gemini-3-flash-preview": {
+            "inputPerMillionTokens": "0.50",
+            "outputPerMillionTokens": "3.00",
+            "currency": "USD"
+          },
+          "google/gemini-3.8-flash": {
+            "inputPerMillionTokens": "0.75",
+            "outputPerMillionTokens": "3.75",
+            "currency": "USD"
+          },
+          "google/gemini-3.6-flash": {
+            "inputPerMillionTokens": "0.75",
+            "outputPerMillionTokens": "3.75",
+            "currency": "USD"
+          },
+          "google/gemini-3.5-flash": {
+            "inputPerMillionTokens": "1.50",
+            "outputPerMillionTokens": "9.00",
+            "currency": "USD"
+          },
+          "google/gemini-2.5-pro": {
+            "inputPerMillionTokens": "1.25",
+            "outputPerMillionTokens": "10.00",
+            "currency": "USD"
+          },
+          "google/gemini-2.5-flash": {
+            "inputPerMillionTokens": "0.30",
+            "outputPerMillionTokens": "2.50",
+            "currency": "USD"
+          },
+          "google/gemini-3.5-flash-lite": {
+            "inputPerMillionTokens": "0.30",
+            "outputPerMillionTokens": "2.50",
+            "currency": "USD"
+          },
+          "google/gemini-3.1-flash-lite": {
+            "inputPerMillionTokens": "0.25",
+            "outputPerMillionTokens": "1.50",
+            "currency": "USD"
+          },
+          "google/gemini-2.5-flash-lite": {
+            "inputPerMillionTokens": "0.10",
+            "outputPerMillionTokens": "0.40",
+            "currency": "USD"
+          },
+          "deepseek/deepseek-v4-flash-vision-exp": {
+            "inputPerMillionTokens": "0.30",
+            "outputPerMillionTokens": "1.20",
+            "currency": "USD"
+          },
+          "deepseek/deepseek-v4-pro": {
+            "inputPerMillionTokens": "1.32",
+            "outputPerMillionTokens": "3.96",
+            "currency": "USD"
+          },
+          "deepseek/deepseek-v4.1-flash": {
+            "inputPerMillionTokens": "0.14",
+            "outputPerMillionTokens": "0.28",
+            "currency": "USD"
+          },
+          "deepseek/deepseek-chat": {
+            "inputPerMillionTokens": "0.14",
+            "outputPerMillionTokens": "0.28",
+            "currency": "USD"
+          },
+          "deepseek/deepseek-reasoner": {
+            "inputPerMillionTokens": "0.14",
+            "outputPerMillionTokens": "0.28",
+            "currency": "USD"
+          },
+          "moonshot/kimi-k3.1-pro": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "10.00",
+            "currency": "USD"
+          },
+          "zai/glm-5.3": {
+            "inputPerMillionTokens": "1.40",
+            "outputPerMillionTokens": "4.40",
+            "currency": "USD"
+          },
+          "zai/glm-5.3-flash": {
+            "inputPerMillionTokens": "0.15",
+            "outputPerMillionTokens": "0.50",
+            "currency": "USD"
+          },
+          "zai/glm-5.2": {
+            "inputPerMillionTokens": "1.40",
+            "outputPerMillionTokens": "4.40",
+            "currency": "USD"
+          },
+          "zai/glm-5.1": {
+            "inputPerMillionTokens": "1.40",
+            "outputPerMillionTokens": "4.40",
+            "currency": "USD"
+          },
+          "zai/glm-5": {
+            "inputPerMillionTokens": "1.00",
+            "outputPerMillionTokens": "3.20",
+            "currency": "USD"
+          },
+          "zai/glm-5-turbo": {
+            "inputPerMillionTokens": "1.20",
+            "outputPerMillionTokens": "4.00",
+            "currency": "USD"
+          },
+          "xai/grok-4.3": {
+            "inputPerMillionTokens": "1.25",
+            "outputPerMillionTokens": "2.50",
+            "currency": "USD"
+          },
+          "xai/grok-build-0.1": {
+            "inputPerMillionTokens": "1.00",
+            "outputPerMillionTokens": "2.00",
+            "currency": "USD"
+          },
+          "xai/grok-4.7": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "6.00",
+            "currency": "USD"
+          },
+          "xai/grok-4.6": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "6.00",
+            "currency": "USD"
+          },
+          "xai/grok-4.5": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "6.00",
+            "currency": "USD"
+          },
+          "minimax/minimax-m2.7": {
+            "inputPerMillionTokens": "0.30",
+            "outputPerMillionTokens": "1.20",
+            "currency": "USD"
+          },
+          "minimax/minimax-m3": {
+            "inputPerMillionTokens": "0.30",
+            "outputPerMillionTokens": "1.20",
+            "currency": "USD"
+          },
+          "qwen/qwen3.8-max": {
+            "inputPerMillionTokens": "2.00",
+            "outputPerMillionTokens": "6.00",
+            "currency": "USD"
+          },
+          "qwen/qwen3.7-max": {
+            "inputPerMillionTokens": "1.48",
+            "outputPerMillionTokens": "4.42",
+            "currency": "USD"
+          },
+          "qwen/qwen3.7-plus": {
+            "inputPerMillionTokens": "0.32",
+            "outputPerMillionTokens": "1.28",
+            "currency": "USD"
+          },
+          "qwen/qwen3.7-flash": {
+            "inputPerMillionTokens": "0.03",
+            "outputPerMillionTokens": "0.13",
+            "currency": "USD"
+          },
+          "qwen/qwen3.8-flash": {
+            "inputPerMillionTokens": "0.15",
+            "outputPerMillionTokens": "0.47",
+            "currency": "USD"
+          },
+          "tencent/hy4-preview": {
+            "inputPerMillionTokens": "0.83",
+            "outputPerMillionTokens": "2.50",
+            "currency": "USD"
+          },
+          "xiaomi/mimo-v2.5": {
+            "inputPerMillionTokens": "0.14",
+            "outputPerMillionTokens": "0.28",
+            "currency": "USD"
+          },
+          "xiaomi/mimo-v2.5-pro": {
+            "inputPerMillionTokens": "0.43",
+            "outputPerMillionTokens": "0.87",
+            "currency": "USD"
+          },
+          "nvidia/nemotron-3-super-120b": {
+            "inputPerMillionTokens": "0.00",
+            "outputPerMillionTokens": "0.00",
+            "currency": "USD"
+          },
+          "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
+            "inputPerMillionTokens": "0.00",
+            "outputPerMillionTokens": "0.00",
+            "currency": "USD"
+          },
+          "nvidia/nemotron-3.5-lightning": {
+            "inputPerMillionTokens": "0.00",
+            "outputPerMillionTokens": "0.00",
+            "currency": "USD"
+          },
+          "nvidia/nemotron-3-ultra-550b": {
+            "inputPerMillionTokens": "0.00",
+            "outputPerMillionTokens": "0.00",
+            "currency": "USD"
+          },
+          "cohere/north-mini-code": {
+            "inputPerMillionTokens": "0.00",
+            "outputPerMillionTokens": "0.00",
+            "currency": "USD"
+          },
+          "poolside/laguna-xs-2.1": {
+            "inputPerMillionTokens": "0.00",
+            "outputPerMillionTokens": "0.00",
+            "currency": "USD"
+          },
+          "poolside/laguna-s-2.1": {
+            "inputPerMillionTokens": "0.09",
+            "outputPerMillionTokens": "0.18",
+            "currency": "USD"
+          },
+          "mistral/mistral-large-4": {
+            "inputPerMillionTokens": "1.36",
+            "outputPerMillionTokens": "4.18",
+            "currency": "USD"
+          },
+          "nvidia/muse-glimmer-30b": {
+            "inputPerMillionTokens": "0.00",
+            "outputPerMillionTokens": "0.00",
+            "currency": "USD"
+          },
+          "nvidia/nemotron-3.5-bolt": {
+            "inputPerMillionTokens": "0.00",
+            "outputPerMillionTokens": "0.00",
+            "currency": "USD"
+          },
+          "nvidia/minimax-m3.1-flash": {
+            "inputPerMillionTokens": "0.00",
+            "outputPerMillionTokens": "0.00",
+            "currency": "USD"
+          }
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "facilitator": "coinbase-cdp+payai",
+          "markup": "0%",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        },
+        "authentication": {
+          "type": "x402-wallet",
+          "description": "Sign requests with your wallet private key - no API keys required",
+          "walletBased": true
+        },
+        "features": [
+          "OpenAI-compatible API",
+          "No accounts or API keys required",
+          "Permissionless access",
+          "Wallet-based identity",
+          "Pay-per-request micropayments",
+          "91 frontier LLMs",
+          "Transparent pricing (provider cost, no platform margin on chat tokens)"
+        ]
+      },
+      {
+        "name": "Grok Live Search",
+        "endpoint": "/api/v1/search",
+        "method": "POST",
+        "description": "Real-time search across web and news using Grok AI",
+        "sources": [
+          "web",
+          "news"
+        ],
+        "pricing": {
+          "pricePerCall": 0.08,
+          "defaultMaxResults": 10,
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "facilitator": "coinbase-cdp+payai",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        },
+        "features": [
+          "Web search",
+          "News search",
+          "Citation support",
+          "Date filtering"
+        ]
+      },
+      {
+        "name": "Multi-chain RPC",
+        "endpoint": "/api/v1/rpc/{network}",
+        "method": "POST",
+        "description": "JSON-RPC 2.0 passthrough across 40 chains (Ethereum, Base, Solana, Polygon, BSC, Arbitrum, Optimism, Avalanche, Bitcoin, Sui, and more). One endpoint, every chain, pay-per-call in USDC, no API key.",
+        "networks": [
+          "ethereum",
+          "base",
+          "solana",
+          "polygon",
+          "bsc",
+          "arbitrum",
+          "optimism",
+          "avalanche",
+          "zksync",
+          "berachain",
+          "unichain",
+          "monad",
+          "bitcoin",
+          "litecoin",
+          "dogecoin",
+          "xrp",
+          "polkadot",
+          "near",
+          "sui",
+          "zcash"
+        ],
+        "pricing": {
+          "flat": 0.003,
+          "marginPercent": 5,
+          "currency": "USD",
+          "note": "$0.003 per JSON-RPC call; a batch is priced per element."
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "facilitator": "coinbase-cdp+payai",
+          "markup": "5%",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        },
+        "features": [
+          "40 chains, one endpoint",
+          "Standard JSON-RPC 2.0",
+          "No API key — pay-per-call USDC",
+          "Hot-read caching"
+        ]
+      },
+      {
+        "name": "Image Generation",
+        "endpoint": "/api/v1/images/generations",
+        "method": "POST",
+        "description": "Generate images with GPT Image 1/2, Nano Banana, CogView, or Grok Imagine via x402 micropayments",
+        "models": [
+          {
+            "id": "openai/gpt-image-1",
+            "name": "GPT Image 1",
+            "provider": "openai",
+            "description": "Native image generation in GPT-4o"
+          },
+          {
+            "id": "openai/gpt-image-2",
+            "name": "ChatGPT Images 2.0",
+            "provider": "openai",
+            "description": "OpenAI's GPT Image 2 — reasoning-driven, multilingual text, character consistency"
+          }
+        ],
+        "pricing": {
+          "openai/gpt-image-1": {
+            "pricePerImage": "0.02",
+            "currency": "USD"
+          },
+          "openai/gpt-image-2": {
+            "pricePerImage": "0.06",
+            "currency": "USD"
+          }
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "facilitator": "coinbase-cdp+payai",
+          "markup": "5%",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Image Editing",
+        "endpoint": "/api/v1/images/image2image",
+        "method": "POST",
+        "description": "Edit existing images via x402 micropayments. OpenAI GPT Image 1/2 support mask-based inpainting; Google Nano Banana / Nano Banana Pro do prompt-only edits.",
+        "models": [
+          {
+            "id": "openai/gpt-image-1",
+            "name": "GPT Image 1",
+            "provider": "openai",
+            "description": "Native image editing in GPT-4o — supports mask inpainting"
+          },
+          {
+            "id": "openai/gpt-image-2",
+            "name": "ChatGPT Images 2.0",
+            "provider": "openai",
+            "description": "Reasoning-driven image editing with multilingual text and high-fidelity inputs — supports mask inpainting"
+          },
+          {
+            "id": "google/nano-banana",
+            "name": "Nano Banana",
+            "provider": "google",
+            "description": "Gemini 2.5 Flash Image — fast prompt-based editing (no mask)"
+          },
+          {
+            "id": "google/nano-banana-2",
+            "name": "Nano Banana 2",
+            "provider": "google",
+            "description": "Gemini 3.1 Flash Image — pro-level quality prompt-based editing at Flash speed (no mask)"
+          },
+          {
+            "id": "google/nano-banana-pro",
+            "name": "Nano Banana Pro",
+            "provider": "google",
+            "description": "Gemini 3 Pro Image — highest-quality prompt-based editing up to 4K (no mask)"
+          }
+        ],
+        "pricing": {
+          "openai/gpt-image-1": {
+            "pricePerImage": "0.02",
+            "currency": "USD"
+          },
+          "openai/gpt-image-2": {
+            "pricePerImage": "0.06",
+            "currency": "USD"
+          },
+          "google/nano-banana": {
+            "pricePerImage": "0.05",
+            "currency": "USD"
+          },
+          "google/nano-banana-2": {
+            "pricePerImage": "0.09",
+            "currency": "USD"
+          },
+          "google/nano-banana-pro": {
+            "pricePerImage": "0.10",
+            "currency": "USD"
+          }
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "facilitator": "coinbase-cdp+payai",
+          "markup": "5%",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Video Generation",
+        "endpoint": "/api/v1/videos/generations",
+        "method": "POST",
+        "description": "Submit an async video generation job with xAI Grok Imagine or ByteDance Seedance via x402 micropayments. Billed per second. POST returns { id, poll_url } — GET the poll_url with the same x-payment header until completion; we settle on the first completed poll.",
+        "models": [
+          {
+            "id": "xai/grok-imagine-video",
+            "name": "Grok Imagine Video",
+            "provider": "xai",
+            "description": "xAI's text/image-to-video, 8s clips"
+          },
+          {
+            "id": "xai/grok-imagine-video-1.5",
+            "name": "Grok Imagine Video 1.5",
+            "provider": "xai",
+            "description": "xAI's flagship text/image-to-video with native synced audio — 8s clips, up to 1080p."
+          },
+          {
+            "id": "bytedance/seedance-1.5-pro",
+            "name": "Seedance 1.5 Pro",
+            "provider": "bytedance",
+            "description": "Budget text/image-to-video, 5s 720p with synced audio (t2v). No RealFace support."
+          },
+          {
+            "id": "bytedance/seedance-2.0-fast",
+            "name": "Seedance 2.0 Fast",
+            "provider": "bytedance",
+            "description": "Fast text/image-to-video, 5s 720p with synced audio (t2v). Supports BytePlus RealFace via real_face_asset_id — see /docs/video/real-person-ip."
+          },
+          {
+            "id": "bytedance/seedance-2.0",
+            "name": "Seedance 2.0 Pro",
+            "provider": "bytedance",
+            "description": "Premium text/image-to-video, 5s 720p with synced audio (t2v). Supports BytePlus RealFace via real_face_asset_id — see /docs/video/real-person-ip."
+          }
+        ],
+        "pricing": {
+          "xai/grok-imagine-video": {
+            "pricePerSecondByResolution": {
+              "480p": "0.05",
+              "720p": "0.07"
+            },
+            "defaultResolution": "480p",
+            "defaultDurationSeconds": 8,
+            "currency": "USD",
+            "perGenerationFee": "0.001",
+            "note": "Per-second rates are xAI's official published rates, charged exactly; the flat per-generation fee is the only markup. Omitted resolution bills and renders 480p; pass resolution: \"720p\" for the higher tier. 1080p/4K rejected before payment — use xai/grok-imagine-video-1.5 for 1080p."
+          },
+          "xai/grok-imagine-video-1.5": {
+            "pricePerSecondByResolution": {
+              "480p": "0.08",
+              "720p": "0.14",
+              "1080p": "0.25"
+            },
+            "defaultResolution": "480p",
+            "defaultDurationSeconds": 8,
+            "currency": "USD",
+            "perGenerationFee": "0.001",
+            "note": "Per-second rates are xAI's official published rates, charged exactly; the flat per-generation fee is the only markup. Omitted resolution bills and renders 480p; pass resolution: \"720p\" or \"1080p\" for the higher tiers. 4K rejected before payment."
+          },
+          "bytedance/seedance-1.5-pro": {
+            "pricePerMTokensTextOnly": "4.32",
+            "pricePerMTokensImageInput": "4.32",
+            "tokensPerSecondAtDefault": 21690,
+            "defaultDurationSeconds": 5,
+            "defaultResolution": "720p",
+            "audioDefault": "on (t2v)",
+            "supportsRealFace": false,
+            "currency": "USD",
+            "note": "Token-priced upstream. Default 5s 720p t2v with audio ≈ $0.49. Flat $4.32/1M (t2v and i2v same rate). No RealFace."
+          },
+          "bytedance/seedance-2.0-fast": {
+            "pricePerMTokensTextOnly": "11.20",
+            "pricePerMTokensImageInput": "11.20",
+            "tokensPerSecondAtDefault": 21690,
+            "defaultDurationSeconds": 5,
+            "defaultResolution": "720p",
+            "audioDefault": "on (t2v) / off (i2v)",
+            "supportsRealFace": true,
+            "realFaceDocsUrl": "/docs/video/real-person-ip",
+            "currency": "USD",
+            "note": "Token-priced upstream. Default 5s 720p t2v with audio ≈ $1.28. Flat $11.2/1M (t2v and i2v same rate). Supports BytePlus RealFace via real_face_asset_id (ta_xxxx)."
+          },
+          "bytedance/seedance-2.0": {
+            "pricePerMTokensTextOnly": "14.00",
+            "pricePerMTokensImageInput": "14.00",
+            "tokensPerSecondAtDefault": 21690,
+            "defaultDurationSeconds": 5,
+            "defaultResolution": "720p",
+            "audioDefault": "on (t2v) / off (i2v)",
+            "supportsRealFace": true,
+            "realFaceDocsUrl": "/docs/video/real-person-ip",
+            "currency": "USD",
+            "note": "Token-priced upstream. Default 5s 720p t2v with audio ≈ $1.59. Flat $14/1M (t2v and i2v same rate). Supports BytePlus RealFace via real_face_asset_id (ta_xxxx)."
+          }
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "facilitator": "coinbase-cdp+payai",
+          "markup": "5%",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Text-to-Speech & Sound Effects (ElevenLabs)",
+        "endpoint": "/api/v1/audio/speech",
+        "method": "POST",
+        "description": "ElevenLabs voice synthesis, pay-per-call. /v1/audio/speech billed per input character (deterministic up-front quote); /v1/audio/sound-effects billed flat per generation. Free voice discovery at GET /v1/audio/voices. No subscription, USDC on Base.",
+        "partner": "ElevenLabs",
+        "models": [
+          {
+            "id": "elevenlabs/flash-v2.5",
+            "name": "ElevenLabs Flash v2.5",
+            "provider": "elevenlabs",
+            "description": "Ultra-low-latency (~75ms) speech synthesis for real-time voice agents. 32 languages."
+          },
+          {
+            "id": "elevenlabs/turbo-v2.5",
+            "name": "ElevenLabs Turbo v2.5",
+            "provider": "elevenlabs",
+            "description": "Balanced quality and latency (~250ms) for interactive use cases. 32 languages."
+          },
+          {
+            "id": "elevenlabs/multilingual-v2",
+            "name": "ElevenLabs Multilingual v2",
+            "provider": "elevenlabs",
+            "description": "Highest-consistency voice for long-form narration, audiobooks, and voiceover. 29 languages."
+          },
+          {
+            "id": "elevenlabs/v3",
+            "name": "ElevenLabs v3",
+            "provider": "elevenlabs",
+            "description": "Maximum expressiveness and emotional range for creative applications. 70+ languages."
+          },
+          {
+            "id": "bytedance/seed-audio-1.0",
+            "name": "Seed Audio 1.0",
+            "provider": "bytedance",
+            "description": "ByteDance's Seed Audio 1.0 — prompt-directed audio creation: describe the voice, emotion, and sound staging in natural language. Up to 120s output, mp3/wav. Billed by audio duration ($0.003/second, estimated from input length)."
+          },
+          {
+            "id": "elevenlabs/sound-effects",
+            "name": "ElevenLabs Sound Effects",
+            "provider": "elevenlabs",
+            "description": "Generate cinematic sound effects and audio textures from a text prompt (up to 22s)."
+          }
+        ],
+        "pricing": {
+          "elevenlabs/flash-v2.5": {
+            "per1kChars": "0.05",
+            "maxInputChars": 40000,
+            "currency": "USD"
+          },
+          "elevenlabs/turbo-v2.5": {
+            "per1kChars": "0.05",
+            "maxInputChars": 40000,
+            "currency": "USD"
+          },
+          "elevenlabs/multilingual-v2": {
+            "per1kChars": "0.10",
+            "maxInputChars": 10000,
+            "currency": "USD"
+          },
+          "elevenlabs/v3": {
+            "per1kChars": "0.10",
+            "maxInputChars": 5000,
+            "currency": "USD"
+          },
+          "bytedance/seed-audio-1.0": {
+            "per1kChars": "0.30",
+            "maxInputChars": 3000,
+            "currency": "USD"
+          },
+          "elevenlabs/sound-effects": {
+            "perGeneration": "0.05",
+            "maxDurationSeconds": 22,
+            "currency": "USD"
+          }
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "facilitator": "coinbase-cdp+payai",
+          "markup": "5%",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Modal Sandbox",
+        "endpoint": "/api/v1/modal/*",
+        "method": "POST",
+        "description": "Managed Python sandboxes for bounded code execution via Modal. Public API currently supports Python 3.11 CPU sandboxes on Base.",
+        "partner": "Modal",
+        "pricing": {
+          "create": {
+            "perRequest": "$0.011",
+            "endpoint": "/api/v1/modal/sandbox/create"
+          },
+          "operations": {
+            "perRequest": "$0.002",
+            "endpoints": [
+              "/api/v1/modal/sandbox/exec",
+              "/api/v1/modal/sandbox/status",
+              "/api/v1/modal/sandbox/terminate"
+            ]
+          },
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Predexon Polymarket Data",
+        "endpoint": "/api/v1/pm/polymarket/*",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "description": "Polymarket prediction market data — events, markets, trades, orderbook, prices, search, and structured queries",
+        "partner": "Predexon",
+        "pricing": {
+          "tier1": {
+            "perRequest": "$0.0085",
+            "methods": "GET",
+            "description": "Events, markets, trades, orderbook, prices, search"
+          },
+          "tier2": {
+            "perRequest": "$0.0085",
+            "methods": "POST",
+            "description": "Structured queries"
+          },
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Predexon Kalshi Data",
+        "endpoint": "/api/v1/pm/kalshi/*",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "description": "Kalshi prediction market data — events, markets, trades, orderbook, series, categories, search, and structured queries",
+        "partner": "Predexon",
+        "pricing": {
+          "tier1": {
+            "perRequest": "$0.0085",
+            "methods": "GET"
+          },
+          "tier2": {
+            "perRequest": "$0.0085",
+            "methods": "POST"
+          },
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Predexon Binance Futures Data",
+        "endpoint": "/api/v1/pm/binance/*",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "description": "Binance futures data — contracts, prices, orderbook, trades, and structured queries",
+        "partner": "Predexon",
+        "pricing": {
+          "tier1": {
+            "perRequest": "$0.0085",
+            "methods": "GET"
+          },
+          "tier2": {
+            "perRequest": "$0.0085",
+            "methods": "POST"
+          },
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Predexon Other Venues Data (Limitless, Opinion, Predict.Fun)",
+        "endpoint": "/api/v1/pm/{limitless,opinion,predictfun}/*",
+        "methods": [
+          "GET"
+        ],
+        "description": "Markets list and historical orderbook snapshots for Limitless, Opinion, and Predict.Fun prediction markets",
+        "partner": "Predexon",
+        "pricing": {
+          "tier1": {
+            "perRequest": "$0.0085",
+            "methods": "GET"
+          },
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Predexon UMA Oracle Resolution Data",
+        "endpoint": "/api/v1/pm/polymarket/uma/markets",
+        "methods": [
+          "GET"
+        ],
+        "description": "UMA optimistic-oracle questions filtered by state (proposed, disputed, resolved, …) — high-signal feed for tracking Polymarket market resolution and disputes",
+        "partner": "Predexon",
+        "pricing": {
+          "tier1": {
+            "perRequest": "$0.0085",
+            "methods": "GET"
+          },
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Predexon Wallet Identity & Clustering",
+        "endpoint": "/api/v1/pm/polymarket/wallet/{identity/{wallet},identities,{address}/cluster}",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "description": "Cross-context wallet labels and on-chain relationship graph — single wallet identity (GET identity/{wallet}), bulk identity lookup (POST identities, up to 200 addresses), and cluster discovery via transfers and proofs (GET {address}/cluster)",
+        "partner": "Predexon",
+        "pricing": {
+          "tier2": {
+            "perRequest": "$0.0085",
+            "methods": "GET, POST"
+          },
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Predexon Cross-Venue Market Search",
+        "endpoint": "/api/v1/pm/markets/search",
+        "methods": [
+          "GET"
+        ],
+        "description": "Search markets across Polymarket, Kalshi, Limitless, Opinion, and Predict.Fun in a single call. Pass ?q=<term> (and optional ?venue= to scope). Not charged when no market matches.",
+        "partner": "Predexon",
+        "pricing": {
+          "tier2": {
+            "perRequest": "$0.0085",
+            "methods": "GET"
+          },
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Exa Web Search",
+        "endpoint": "/api/v1/exa/*",
+        "method": "POST",
+        "description": "Neural web search, similarity lookup, page-content extraction and direct answers. 4 endpoints.",
+        "partner": "Exa",
+        "pricing": {
+          "search": {
+            "perRequest": "$0.011",
+            "endpoints": [
+              "/api/v1/exa/search",
+              "/api/v1/exa/find-similar",
+              "/api/v1/exa/answer"
+            ]
+          },
+          "contents": {
+            "perUrl": "$0.002",
+            "endpoint": "/api/v1/exa/contents",
+            "description": "Total = urls.length × per-URL price + one $0.001 transaction fee per call."
+          },
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "DefiLlama TVL & Yields",
+        "endpoint": "/api/v1/defillama/*",
+        "method": "GET",
+        "description": "DeFi protocol TVL, per-chain TVL, yield pools and token prices, from DefiLlama's Apache-2.0 dataset.",
+        "partner": "DefiLlama",
+        "pricing": {
+          "currency": "USD",
+          "endpoints": [
+            {
+              "endpoint": "/api/v1/defillama/protocols",
+              "perRequest": "$0.006"
+            },
+            {
+              "endpoint": "/api/v1/defillama/protocol/{slug}",
+              "perRequest": "$0.006"
+            },
+            {
+              "endpoint": "/api/v1/defillama/chains",
+              "perRequest": "$0.006"
+            },
+            {
+              "endpoint": "/api/v1/defillama/yields",
+              "perRequest": "$0.006"
+            },
+            {
+              "endpoint": "/api/v1/defillama/prices/{coins}",
+              "perRequest": "$0.002"
+            }
+          ]
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "0x Swap & Gasless — FREE",
+        "endpoint": "/api/v1/zerox/*",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "description": "Permit2 swap quotes and gasless (relayer-paid) trading across every chain 0x supports. No x402 charge: BlockRun earns the on-chain affiliate fee that is set on each quote.",
+        "partner": "0x",
+        "pricing": {
+          "free": true
+        },
+        "endpoints": [
+          "GET /api/v1/zerox/price",
+          "GET /api/v1/zerox/quote",
+          "GET /api/v1/zerox/gasless/price",
+          "GET /api/v1/zerox/gasless/quote",
+          "POST /api/v1/zerox/gasless/submit",
+          "GET /api/v1/zerox/gasless/status/{trade_hash}",
+          "GET /api/v1/zerox/gasless/approval-tokens",
+          "GET /api/v1/zerox/gasless/chains",
+          "GET /api/v1/zerox/swap/chains"
+        ]
+      },
+      {
+        "name": "Equity Catalog — FREE",
+        "endpoint": "/api/v1/usstock/list",
+        "methods": [
+          "GET"
+        ],
+        "description": "Ticker catalog for US and 11 more global equity markets: symbols, descriptions and market hours. Free, no payment required. Prices themselves are not served — realtime and global equity coverage are available on request, contact us.",
+        "partner": "On-chain Oracles",
+        "pricing": {
+          "free": true
+        },
+        "examples": {
+          "catalog": "/v1/usstock/list",
+          "otherMarkets": "/v1/stocks/{market}/list  (us, hk, jp, kr, gb, de, fr, nl, ie, lu, cn, ca)"
+        },
+        "features": [
+          "12 global equity markets",
+          "Symbol, description and market-hours metadata",
+          "Free — no x402 payment required",
+          "Prices on request — hello@blockrun.ai"
+        ]
+      },
+      {
+        "name": "Crypto Prices (on-chain) — FREE",
+        "endpoint": "/api/v1/crypto/price/{pair}",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "description": "Free realtime crypto prices for 500+ pairs (BTC-USD, ETH-USD, SOL-USD, …). No payment required. Historical OHLC at /v1/crypto/history/{pair}. Free discovery at /v1/crypto/list.",
+        "partner": "On-chain Oracles",
+        "pricing": {
+          "free": true
+        },
+        "examples": {
+          "realtime": "/v1/crypto/price/BTC-USD",
+          "history": "/v1/crypto/history/BTC-USD?resolution=D&from=<ts>&to=<ts>"
+        }
+      },
+      {
+        "name": "FX Prices (on-chain) — FREE",
+        "endpoint": "/api/v1/fx/price/{pair}",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "description": "Free realtime foreign exchange rates (EUR-USD, GBP-USD, JPY-USD, …).",
+        "partner": "On-chain Oracles",
+        "pricing": {
+          "free": true
+        },
+        "examples": {
+          "realtime": "/v1/fx/price/EUR-USD"
+        }
+      },
+      {
+        "name": "Commodity Prices (on-chain) — FREE",
+        "endpoint": "/api/v1/commodity/price/{symbol}",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "description": "Free realtime commodity prices (XAU-USD gold, XAG-USD silver, XPT-USD platinum, oil, …).",
+        "partner": "On-chain Oracles",
+        "pricing": {
+          "free": true
+        },
+        "examples": {
+          "realtime": "/v1/commodity/price/XAU-USD"
+        }
+      },
+      {
+        "name": "Phone Numbers & Lookup",
+        "endpoint": "/api/v1/phone/*",
+        "method": "POST",
+        "description": "Carrier/line-type lookup, fraud scoring, and the full rented-number lifecycle (buy, renew, list, release).",
+        "partner": "Twilio",
+        "pricing": {
+          "currency": "USD",
+          "endpoints": [
+            {
+              "endpoint": "/api/v1/phone/lookup",
+              "perRequest": "$0.011"
+            },
+            {
+              "endpoint": "/api/v1/phone/lookup/fraud",
+              "perRequest": "$0.051"
+            },
+            {
+              "endpoint": "/api/v1/phone/numbers/buy",
+              "perRequest": "$5.001"
+            },
+            {
+              "endpoint": "/api/v1/phone/numbers/renew",
+              "perRequest": "$5.001"
+            },
+            {
+              "endpoint": "/api/v1/phone/numbers/list",
+              "perRequest": "$0.002"
+            },
+            {
+              "endpoint": "/api/v1/phone/numbers/release",
+              "perRequest": "free"
+            }
+          ]
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Outbound AI Voice Calls",
+        "endpoint": "/api/v1/voice/call",
+        "methods": [
+          "POST",
+          "GET"
+        ],
+        "description": "Place an outbound AI phone call with a task prompt; poll the transcript and outcome at /api/v1/voice/call/{call_id}.",
+        "partner": "Bland.ai",
+        "pricing": {
+          "perCall": "$0.541",
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Music Generation",
+        "endpoint": "/api/v1/audio/generations",
+        "methods": [
+          "POST",
+          "GET"
+        ],
+        "description": "Generate music from a prompt. 1 models; price varies by model — poll the job at /api/v1/audio/generations/{id}.",
+        "pricing": {
+          "perRequest": "varies by model",
+          "currency": "USD",
+          "catalog": "/api/v1/audio/models"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "RealFace Enrollment",
+        "endpoint": "/api/v1/realface/enroll",
+        "method": "POST",
+        "description": "Enroll a liveness-verified face so it can be used as a consistent real person in video generation. Status at /api/v1/realface/status.",
+        "pricing": {
+          "perRequest": "$0.011",
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Virtual Portrait Enrollment",
+        "endpoint": "/api/v1/portrait/enroll",
+        "method": "POST",
+        "description": "Enroll a portrait asset for reuse as a consistent character across generated clips.",
+        "pricing": {
+          "perRequest": "$0.011",
+          "currency": "USD"
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Polymarket Funding",
+        "endpoint": "/api/v1/polymarket/fund",
+        "method": "POST",
+        "description": "Gaslessly fund a Polymarket deposit wallet: the signed USDC transfer settles directly to the Polymarket bridge (non-custodial) and BlockRun pays the gas.",
+        "pricing": {
+          "perRequest": "$0.011",
+          "currency": "USD",
+          "description": "Routing fee only — the funded amount is separate."
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "Fiat Onramp Session — FREE",
+        "endpoint": "/api/v1/onramp/token",
+        "methods": [
+          "POST",
+          "GET"
+        ],
+        "description": "Mint a Coinbase Onramp session for a destination wallet. Link minting is $0; x402 is used only to authenticate which wallet the session is for.",
+        "pricing": {
+          "free": true
+        },
+        "payment": {
+          "network": "eip155:8453",
+          "networkName": "Base",
+          "chainId": 8453,
+          "token": "USDC",
+          "tokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "recipient": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+          "scheme": "exact",
+          "maxTimeoutSeconds": 300
+        }
+      },
+      {
+        "name": "List Available Models",
+        "endpoint": "/api/v1/models",
+        "method": "GET",
+        "description": "Get list of all available models with pricing",
+        "pricing": {
+          "free": true
+        }
+      }
+    ],
+    "documentation": {
+      "sdks": [
+        {
+          "language": "Python",
+          "package": "blockrun-llm",
+          "install": "pip install blockrun-llm",
+          "repo": "https://github.com/BlockRunAI/blockrun-llm"
+        },
+        {
+          "language": "TypeScript",
+          "package": "@blockrun/llm",
+          "install": "npm install @blockrun/llm",
+          "repo": "https://github.com/BlockRunAI/blockrun-llm-ts"
+        },
+        {
+          "language": "Go",
+          "package": "github.com/blockrunai/blockrun-llm-go",
+          "install": "go get github.com/blockrunai/blockrun-llm-go"
+        }
+      ],
+      "agentSkill": "https://github.com/BlockRunAI/blockrun-agent-skill",
+      "skill": "https://blockrun.ai/skill.md",
+      "agentReference": "https://blockrun.ai/agent.md",
+      "llmsTxt": "https://blockrun.ai/llms.txt",
+      "onramp": {
+        "endpoint": "https://blockrun.ai/api/v1/onramp/token",
+        "method": "POST",
+        "price": "free",
+        "description": "Mint a one-time Coinbase Onramp link to fund your wallet with a card. The x402 signature authenticates the wallet; the funding address must match the signer."
+      },
+      "dataMarketplace": "https://blockrun.ai/services",
+      "services": "https://blockrun.ai/services"
+    },
+    "x402Features": [
+      "wallet-based-identity",
+      "auto-discovery",
+      "transparent-pricing",
+      "base-mainnet",
+      "dual-facilitator-cdp-payai",
+      "data-marketplace",
+      "data-services",
+      "third-party-data-partners"
+    ],
+    "extensions": {
+      "totalModels": 91,
+      "providers": [
+        "openai",
+        "anthropic",
+        "google",
+        "deepseek",
+        "moonshot",
+        "zai",
+        "xai",
+        "minimax",
+        "qwen",
+        "tencent",
+        "xiaomi",
+        "nvidia",
+        "cohere",
+        "poolside",
+        "mistral"
+      ],
+      "categories": [
+        "chat",
+        "reasoning",
+        "coding",
+        "vision",
+        "search"
+      ],
+      "stats": {
+        "averageInputPrice": "2.65",
+        "averageOutputPrice": "14.27",
+        "cheapestModel": "nvidia/nemotron-3-super-120b",
+        "mostCapableModel": "openai/gpt-5.2"
+      }
+    }
+  },
+  "decode_target": "https://blockrun.ai/api/v1/chat/completions",
+  "decode_method": "POST",
+  "post_status": 402,
+  "response_headers": {
+    "access-control-expose-headers": "x-blockrun-gateway-request-id",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "no-store, no-cache, must-revalidate, max-age=0",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a566e88c0a89dc39-YVR",
+    "connection": "keep-alive",
+    "content-length": "742",
+    "content-type": "application/json",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "payment-required": "eyJ4NDAyVmVyc2lvbiI6MiwiYWNjZXB0cyI6W3sic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1Ojg0NTMiLCJhbW91bnQiOiIyMDAwIiwiYXNzZXQiOiIweDgzMzU4OWZDRDZlRGI2RTA4ZjRjN0MzMkQ0ZjcxYjU0YmRBMDI5MTMiLCJwYXlUbyI6IjB4ZTkwMzAwMTRGNURBZTIxN2QwQTE1MmYwMkEwNDM1NjdiMTZjMWFCZiIsIm1heFRpbWVvdXRTZWNvbmRzIjozMDAsImV4dHJhIjp7Im5hbWUiOiJVU0QgQ29pbiIsInZlcnNpb24iOiIyIn19XSwicmVzb3VyY2UiOnsidXJsIjoiaHR0cHM6Ly9ibG9ja3J1bi5haS9hcGkvdjEvY2hhdC9jb21wbGV0aW9ucyIsImRlc2NyaXB0aW9uIjoiQUkgY2hhdCBjb21wbGV0aW9ucyBBUEkgLSBwYXkgcGVyIHJlcXVlc3Qgd2l0aCBVU0RDIG9uIEJhc2UiLCJtaW1lVHlwZSI6ImFwcGxpY2F0aW9uL2pzb24ifSwiZXh0ZW5zaW9ucyI6eyJiYXphYXIiOnsic2NoZW1hIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7ImlucHV0Ijp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7ImJvZHkiOnsidHlwZSI6Im9iamVjdCIsInJlcXVpcmVkIjpbIm1vZGVsIiwibWVzc2FnZXMiXSwicHJvcGVydGllcyI6eyJtb2RlbCI6eyJ0eXBlIjoic3RyaW5nIiwiZGVzY3JpcHRpb24iOiJBSSBtb2RlbCBJRCAoZS5nLiwgZ3B0LTRvLW1pbmksIGNsYXVkZS1oYWlrdS00LjUpIn0sIm1lc3NhZ2VzIjp7InR5cGUiOiJhcnJheSIsImRlc2NyaXB0aW9uIjoiQXJyYXkgb2YgY2hhdCBtZXNzYWdlcyB3aXRoIHJvbGUgYW5kIGNvbnRlbnQiLCJpdGVtcyI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJyb2xlIjp7InR5cGUiOiJzdHJpbmcifSwiY29udGVudCI6eyJ0eXBlIjoic3RyaW5nIn19fX0sIm1heF90b2tlbnMiOnsidHlwZSI6ImludGVnZXIiLCJkZXNjcmlwdGlvbiI6Ik1heGltdW0gdG9rZW5zIHRvIGdlbmVyYXRlIn0sInRlbXBlcmF0dXJlIjp7InR5cGUiOiJudW1iZXIiLCJkZXNjcmlwdGlvbiI6IlNhbXBsaW5nIHRlbXBlcmF0dXJlICgwLTIpIn0sInN0cmVhbSI6eyJ0eXBlIjoiYm9vbGVhbiIsImRlc2NyaXB0aW9uIjoiRW5hYmxlIHN0cmVhbWluZyByZXNwb25zZXMifX19fX0sIm91dHB1dCI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJleGFtcGxlIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7ImNob2ljZXMiOnsidHlwZSI6ImFycmF5In0sInVzYWdlIjp7InR5cGUiOiJvYmplY3QifX19fX19fSwiaW5mbyI6eyJpbnB1dCI6eyJ0eXBlIjoiaHR0cCIsIm1ldGhvZCI6IlBPU1QiLCJkaXNjb3ZlcmFibGUiOnRydWUsImJvZHlGaWVsZHMiOnsibW9kZWwiOnsidHlwZSI6InN0cmluZyIsImRlc2NyaXB0aW9uIjoiQUkgbW9kZWwgSUQgKGUuZy4sIGdwdC00by1taW5pLCBjbGF1ZGUtaGFpa3UtNC41KSJ9LCJtZXNzYWdlcyI6eyJ0eXBlIjoiYXJyYXkiLCJkZXNjcmlwdGlvbiI6IkFycmF5IG9mIGNoYXQgbWVzc2FnZXMgd2l0aCByb2xlIGFuZCBjb250ZW50In0sIm1heF90b2tlbnMiOnsidHlwZSI6ImludGVnZXIiLCJkZXNjcmlwdGlvbiI6Ik1heGltdW0gdG9rZW5zIHRvIGdlbmVyYXRlIn0sInRlbXBlcmF0dXJlIjp7InR5cGUiOiJudW1iZXIiLCJkZXNjcmlwdGlvbiI6IlNhbXBsaW5nIHRlbXBlcmF0dXJlICgwLTIpIn0sInN0cmVhbSI6eyJ0eXBlIjoiYm9vbGVhbiIsImRlc2NyaXB0aW9uIjoiRW5hYmxlIHN0cmVhbWluZyByZXNwb25zZXMifX19LCJvdXRwdXQiOnsidHlwZSI6Impzb24iLCJleGFtcGxlIjp7ImNob2ljZXMiOltdLCJ1c2FnZSI6e319fX19fX0=",
+    "pragma": "no-cache",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=pnFus%2BMA4BlX0BptYTC7woKl%2Boe7P6QAKHwqzsNUxuhgENOhcTxWlZMyzYDcb3hRUyRgGhu85EFgWg%2Fny0tiTLCNj8eZk2Z0tR39ZjA6FkgNMrNgWQ4U3m48umsTZQ%3D%3D\"}]}",
+    "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "www-authenticate": "X402 requirements=\"eyJ4NDAyVmVyc2lvbiI6MiwiYWNjZXB0cyI6W3sic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1Ojg0NTMiLCJhbW91bnQiOiIyMDAwIiwiYXNzZXQiOiIweDgzMzU4OWZDRDZlRGI2RTA4ZjRjN0MzMkQ0ZjcxYjU0YmRBMDI5MTMiLCJwYXlUbyI6IjB4ZTkwMzAwMTRGNURBZTIxN2QwQTE1MmYwMkEwNDM1NjdiMTZjMWFCZiIsIm1heFRpbWVvdXRTZWNvbmRzIjozMDAsImV4dHJhIjp7Im5hbWUiOiJVU0QgQ29pbiIsInZlcnNpb24iOiIyIn19XSwicmVzb3VyY2UiOnsidXJsIjoiaHR0cHM6Ly9ibG9ja3J1bi5haS9hcGkvdjEvY2hhdC9jb21wbGV0aW9ucyIsImRlc2NyaXB0aW9uIjoiQUkgY2hhdCBjb21wbGV0aW9ucyBBUEkgLSBwYXkgcGVyIHJlcXVlc3Qgd2l0aCBVU0RDIG9uIEJhc2UiLCJtaW1lVHlwZSI6ImFwcGxpY2F0aW9uL2pzb24ifSwiZXh0ZW5zaW9ucyI6eyJiYXphYXIiOnsic2NoZW1hIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7ImlucHV0Ijp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7ImJvZHkiOnsidHlwZSI6Im9iamVjdCIsInJlcXVpcmVkIjpbIm1vZGVsIiwibWVzc2FnZXMiXSwicHJvcGVydGllcyI6eyJtb2RlbCI6eyJ0eXBlIjoic3RyaW5nIiwiZGVzY3JpcHRpb24iOiJBSSBtb2RlbCBJRCAoZS5nLiwgZ3B0LTRvLW1pbmksIGNsYXVkZS1oYWlrdS00LjUpIn0sIm1lc3NhZ2VzIjp7InR5cGUiOiJhcnJheSIsImRlc2NyaXB0aW9uIjoiQXJyYXkgb2YgY2hhdCBtZXNzYWdlcyB3aXRoIHJvbGUgYW5kIGNvbnRlbnQiLCJpdGVtcyI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJyb2xlIjp7InR5cGUiOiJzdHJpbmcifSwiY29udGVudCI6eyJ0eXBlIjoic3RyaW5nIn19fX0sIm1heF90b2tlbnMiOnsidHlwZSI6ImludGVnZXIiLCJkZXNjcmlwdGlvbiI6Ik1heGltdW0gdG9rZW5zIHRvIGdlbmVyYXRlIn0sInRlbXBlcmF0dXJlIjp7InR5cGUiOiJudW1iZXIiLCJkZXNjcmlwdGlvbiI6IlNhbXBsaW5nIHRlbXBlcmF0dXJlICgwLTIpIn0sInN0cmVhbSI6eyJ0eXBlIjoiYm9vbGVhbiIsImRlc2NyaXB0aW9uIjoiRW5hYmxlIHN0cmVhbWluZyByZXNwb25zZXMifX19fX0sIm91dHB1dCI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJleGFtcGxlIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7ImNob2ljZXMiOnsidHlwZSI6ImFycmF5In0sInVzYWdlIjp7InR5cGUiOiJvYmplY3QifX19fX19fSwiaW5mbyI6eyJpbnB1dCI6eyJ0eXBlIjoiaHR0cCIsIm1ldGhvZCI6IlBPU1QiLCJkaXNjb3ZlcmFibGUiOnRydWUsImJvZHlGaWVsZHMiOnsibW9kZWwiOnsidHlwZSI6InN0cmluZyIsImRlc2NyaXB0aW9uIjoiQUkgbW9kZWwgSUQgKGUuZy4sIGdwdC00by1taW5pLCBjbGF1ZGUtaGFpa3UtNC41KSJ9LCJtZXNzYWdlcyI6eyJ0eXBlIjoiYXJyYXkiLCJkZXNjcmlwdGlvbiI6IkFycmF5IG9mIGNoYXQgbWVzc2FnZXMgd2l0aCByb2xlIGFuZCBjb250ZW50In0sIm1heF90b2tlbnMiOnsidHlwZSI6ImludGVnZXIiLCJkZXNjcmlwdGlvbiI6Ik1heGltdW0gdG9rZW5zIHRvIGdlbmVyYXRlIn0sInRlbXBlcmF0dXJlIjp7InR5cGUiOiJudW1iZXIiLCJkZXNjcmlwdGlvbiI6IlNhbXBsaW5nIHRlbXBlcmF0dXJlICgwLTIpIn0sInN0cmVhbSI6eyJ0eXBlIjoiYm9vbGVhbiIsImRlc2NyaXB0aW9uIjoiRW5hYmxlIHN0cmVhbWluZyByZXNwb25zZXMifX19LCJvdXRwdXQiOnsidHlwZSI6Impzb24iLCJleGFtcGxlIjp7ImNob2ljZXMiOltdLCJ1c2FnZSI6e319fX19fX0=\"",
+    "x-blockrun-gateway-request-id": "7c8fd9cc-0221-4a03-aa76-952fc9fae8ac",
+    "x-cloud-trace-context": "51792434705be51907bf3b32a131a1a0",
+    "x-payment-required": "eyJ4NDAyVmVyc2lvbiI6MiwiYWNjZXB0cyI6W3sic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1Ojg0NTMiLCJhbW91bnQiOiIyMDAwIiwiYXNzZXQiOiIweDgzMzU4OWZDRDZlRGI2RTA4ZjRjN0MzMkQ0ZjcxYjU0YmRBMDI5MTMiLCJwYXlUbyI6IjB4ZTkwMzAwMTRGNURBZTIxN2QwQTE1MmYwMkEwNDM1NjdiMTZjMWFCZiIsIm1heFRpbWVvdXRTZWNvbmRzIjozMDAsImV4dHJhIjp7Im5hbWUiOiJVU0QgQ29pbiIsInZlcnNpb24iOiIyIn19XSwicmVzb3VyY2UiOnsidXJsIjoiaHR0cHM6Ly9ibG9ja3J1bi5haS9hcGkvdjEvY2hhdC9jb21wbGV0aW9ucyIsImRlc2NyaXB0aW9uIjoiQUkgY2hhdCBjb21wbGV0aW9ucyBBUEkgLSBwYXkgcGVyIHJlcXVlc3Qgd2l0aCBVU0RDIG9uIEJhc2UiLCJtaW1lVHlwZSI6ImFwcGxpY2F0aW9uL2pzb24ifSwiZXh0ZW5zaW9ucyI6eyJiYXphYXIiOnsic2NoZW1hIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7ImlucHV0Ijp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7ImJvZHkiOnsidHlwZSI6Im9iamVjdCIsInJlcXVpcmVkIjpbIm1vZGVsIiwibWVzc2FnZXMiXSwicHJvcGVydGllcyI6eyJtb2RlbCI6eyJ0eXBlIjoic3RyaW5nIiwiZGVzY3JpcHRpb24iOiJBSSBtb2RlbCBJRCAoZS5nLiwgZ3B0LTRvLW1pbmksIGNsYXVkZS1oYWlrdS00LjUpIn0sIm1lc3NhZ2VzIjp7InR5cGUiOiJhcnJheSIsImRlc2NyaXB0aW9uIjoiQXJyYXkgb2YgY2hhdCBtZXNzYWdlcyB3aXRoIHJvbGUgYW5kIGNvbnRlbnQiLCJpdGVtcyI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJyb2xlIjp7InR5cGUiOiJzdHJpbmcifSwiY29udGVudCI6eyJ0eXBlIjoic3RyaW5nIn19fX0sIm1heF90b2tlbnMiOnsidHlwZSI6ImludGVnZXIiLCJkZXNjcmlwdGlvbiI6Ik1heGltdW0gdG9rZW5zIHRvIGdlbmVyYXRlIn0sInRlbXBlcmF0dXJlIjp7InR5cGUiOiJudW1iZXIiLCJkZXNjcmlwdGlvbiI6IlNhbXBsaW5nIHRlbXBlcmF0dXJlICgwLTIpIn0sInN0cmVhbSI6eyJ0eXBlIjoiYm9vbGVhbiIsImRlc2NyaXB0aW9uIjoiRW5hYmxlIHN0cmVhbWluZyByZXNwb25zZXMifX19fX0sIm91dHB1dCI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJleGFtcGxlIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7ImNob2ljZXMiOnsidHlwZSI6ImFycmF5In0sInVzYWdlIjp7InR5cGUiOiJvYmplY3QifX19fX19fSwiaW5mbyI6eyJpbnB1dCI6eyJ0eXBlIjoiaHR0cCIsIm1ldGhvZCI6IlBPU1QiLCJkaXNjb3ZlcmFibGUiOnRydWUsImJvZHlGaWVsZHMiOnsibW9kZWwiOnsidHlwZSI6InN0cmluZyIsImRlc2NyaXB0aW9uIjoiQUkgbW9kZWwgSUQgKGUuZy4sIGdwdC00by1taW5pLCBjbGF1ZGUtaGFpa3UtNC41KSJ9LCJtZXNzYWdlcyI6eyJ0eXBlIjoiYXJyYXkiLCJkZXNjcmlwdGlvbiI6IkFycmF5IG9mIGNoYXQgbWVzc2FnZXMgd2l0aCByb2xlIGFuZCBjb250ZW50In0sIm1heF90b2tlbnMiOnsidHlwZSI6ImludGVnZXIiLCJkZXNjcmlwdGlvbiI6Ik1heGltdW0gdG9rZW5zIHRvIGdlbmVyYXRlIn0sInRlbXBlcmF0dXJlIjp7InR5cGUiOiJudW1iZXIiLCJkZXNjcmlwdGlvbiI6IlNhbXBsaW5nIHRlbXBlcmF0dXJlICgwLTIpIn0sInN0cmVhbSI6eyJ0eXBlIjoiYm9vbGVhbiIsImRlc2NyaXB0aW9uIjoiRW5hYmxlIHN0cmVhbWluZyByZXNwb25zZXMifX19LCJvdXRwdXQiOnsidHlwZSI6Impzb24iLCJleGFtcGxlIjp7ImNob2ljZXMiOltdLCJ1c2FnZSI6e319fX19fX0="
+  },
+  "decoded_challenge": {
+    "x402Version": 2,
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "amount": "2000",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "payTo": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
+        "maxTimeoutSeconds": 300,
+        "extra": {
+          "name": "USD Coin",
+          "version": "2"
+        }
+      }
+    ],
+    "resource": {
+      "url": "https://blockrun.ai/api/v1/chat/completions",
+      "description": "AI chat completions API - pay per request with USDC on Base",
+      "mimeType": "application/json"
+    },
+    "extensions": {
+      "bazaar": {
+        "schema": {
+          "type": "object",
+          "properties": {
+            "input": {
+              "type": "object",
+              "properties": {
+                "body": {
+                  "type": "object",
+                  "required": [
+                    "model",
+                    "messages"
+                  ],
+                  "properties": {
+                    "model": {
+                      "type": "string",
+                      "description": "AI model ID (e.g., gpt-4o-mini, claude-haiku-4.5)"
+                    },
+                    "messages": {
+                      "type": "array",
+                      "description": "Array of chat messages with role and content",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "role": {
+                            "type": "string"
+                          },
+                          "content": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "max_tokens": {
+                      "type": "integer",
+                      "description": "Maximum tokens to generate"
+                    },
+                    "temperature": {
+                      "type": "number",
+                      "description": "Sampling temperature (0-2)"
+                    },
+                    "stream": {
+                      "type": "boolean",
+                      "description": "Enable streaming responses"
+                    }
+                  }
+                }
+              }
+            },
+            "output": {
+              "type": "object",
+              "properties": {
+                "example": {
+                  "type": "object",
+                  "properties": {
+                    "choices": {
+                      "type": "array"
+                    },
+                    "usage": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "info": {
+          "input": {
+            "type": "http",
+            "method": "POST",
+            "discoverable": true,
+            "bodyFields": {
+              "model": {
+                "type": "string",
+                "description": "AI model ID (e.g., gpt-4o-mini, claude-haiku-4.5)"
+              },
+              "messages": {
+                "type": "array",
+                "description": "Array of chat messages with role and content"
+              },
+              "max_tokens": {
+                "type": "integer",
+                "description": "Maximum tokens to generate"
+              },
+              "temperature": {
+                "type": "number",
+                "description": "Sampling temperature (0-2)"
+              },
+              "stream": {
+                "type": "boolean",
+                "description": "Enable streaming responses"
+              }
+            }
+          },
+          "output": {
+            "type": "json",
+            "example": {
+              "choices": [],
+              "usage": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "x402_version": 2,
+  "v2_shape": true
+}

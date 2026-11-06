@@ -1,0 +1,273 @@
+{
+  "endpoint": "https://kaisha-api.hp-vladic.workers.dev",
+  "wellknown_status": 200,
+  "wellknown": {
+    "x402Version": 2,
+    "name": "Kaisha — Japan Company Registry API",
+    "description": "Official-registry lookups for all 5.76M Japanese corporations, invoice (適格請求書) number verification against the National Tax Agency dataset, and Japanese business-day utilities. Pay per call via x402 — no API keys.",
+    "openapi": "https://kaisha-api.hp-vladic.workers.dev/openapi.json",
+    "llms": "https://kaisha-api.hp-vladic.workers.dev/llms.txt",
+    "mcp": "npx -y kaisha-mcp",
+    "resources": [
+      {
+        "url": "https://kaisha-api.hp-vladic.workers.dev/resolve",
+        "method": "GET",
+        "description": "Resolve Japanese company by name or corporate number",
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "price": "$0.005",
+            "payTo": "0xF2A6416EBb0C594Ab2977695bED061729ddEb47b",
+            "asset": "USDC"
+          },
+          {
+            "scheme": "exact",
+            "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+            "price": "$0.005",
+            "payTo": "6nZQJcTRWm6VQwa7Tg1JBUGjNznviS9fExUHb53TB3GG",
+            "asset": "USDC"
+          }
+        ]
+      },
+      {
+        "url": "https://kaisha-api.hp-vladic.workers.dev/invoice/verify",
+        "method": "GET",
+        "description": "Verify Japan qualified-invoice registration number",
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "price": "$0.01",
+            "payTo": "0xF2A6416EBb0C594Ab2977695bED061729ddEb47b",
+            "asset": "USDC"
+          },
+          {
+            "scheme": "exact",
+            "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+            "price": "$0.01",
+            "payTo": "6nZQJcTRWm6VQwa7Tg1JBUGjNznviS9fExUHb53TB3GG",
+            "asset": "USDC"
+          }
+        ]
+      },
+      {
+        "url": "https://kaisha-api.hp-vladic.workers.dev/calendar/business-days",
+        "method": "GET",
+        "description": "Japanese business-day calculator",
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "price": "$0.002",
+            "payTo": "0xF2A6416EBb0C594Ab2977695bED061729ddEb47b",
+            "asset": "USDC"
+          },
+          {
+            "scheme": "exact",
+            "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+            "price": "$0.002",
+            "payTo": "6nZQJcTRWm6VQwa7Tg1JBUGjNznviS9fExUHb53TB3GG",
+            "asset": "USDC"
+          }
+        ]
+      },
+      {
+        "url": "https://kaisha-api.hp-vladic.workers.dev/calendar/holidays",
+        "method": "GET",
+        "description": "Japanese national holidays",
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "price": "$0.002",
+            "payTo": "0xF2A6416EBb0C594Ab2977695bED061729ddEb47b",
+            "asset": "USDC"
+          },
+          {
+            "scheme": "exact",
+            "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+            "price": "$0.002",
+            "payTo": "6nZQJcTRWm6VQwa7Tg1JBUGjNznviS9fExUHb53TB3GG",
+            "asset": "USDC"
+          }
+        ]
+      },
+      {
+        "url": "https://kaisha-api.hp-vladic.workers.dev/catalog",
+        "method": "GET",
+        "description": "Free machine-readable catalog",
+        "accepts": []
+      }
+    ]
+  },
+  "decode_target": "https://kaisha-api.hp-vladic.workers.dev/resolve",
+  "decode_method": "GET",
+  "post_status": 402,
+  "response_headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "PAYMENT-REQUIRED,PAYMENT-RESPONSE",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cf-ray": "a566e8896aeeda76-YVR",
+    "connection": "keep-alive",
+    "content-length": "2",
+    "content-type": "application/json",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "payment-required": "eyJ4NDAyVmVyc2lvbiI6MiwiZXJyb3IiOiJQYXltZW50IHJlcXVpcmVkIiwicmVzb3VyY2UiOnsidXJsIjoiaHR0cHM6Ly9rYWlzaGEtYXBpLmhwLXZsYWRpYy53b3JrZXJzLmRldi9yZXNvbHZlIiwiZGVzY3JpcHRpb24iOiJSZXNvbHZlIGEgSmFwYW5lc2UgY29tcGFueSB0byBpdHMgb2ZmaWNpYWwgcmVnaXN0cnkgcmVjb3JkOiAxMy1kaWdpdCBjb3Jwb3JhdGUgbnVtYmVyICjms5Xkurrnlarlj7cpLCBjYW5vbmljYWwgcmVnaXN0ZXJlZCBuYW1lLCBoZWFkLW9mZmljZSBhZGRyZXNzLCBlbnRpdHkgdHlwZSwgYW5kIGFjdGl2ZS9jbG9zZWQgc3RhdHVzLiBRdWVyeSBieSBuYW1lIChmdXp6eSBub3JtYWxpemF0aW9uOiBsZWdhbC1mb3JtIHdvcmRzLCB6ZW5rYWt1L2hhbmtha3UgYW5kIGthbmEgdmFyaWFudHMgYXJlIGhhbmRsZWQpIG9yIGJ5IGNvcnBvcmF0ZSBudW1iZXIuIFNvdXJjZTogTmF0aW9uYWwgVGF4IEFnZW5jeSBjb3Jwb3JhdGUgbnVtYmVyIHJlZ2lzdHJ5LCBhbGwgfjVNIHJlZ2lzdGVyZWQgY29ycG9yYXRpb25zIGluIEphcGFuLiIsIm1pbWVUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsInNlcnZpY2VOYW1lIjoiS2Fpc2hhIOKAlCBKYXBhbiBDb21wYW55IFJlZ2lzdHJ5IEFQSSIsInRhZ3MiOlsiamFwYW4iLCJjb21wYW55IiwicmVnaXN0cnkiLCJreWMiLCJjb3Jwb3JhdGUtbnVtYmVyIiwiYnVzaW5lc3MtZGF0YSJdfSwiYWNjZXB0cyI6W3sic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1Ojg0NTMiLCJhbW91bnQiOiI1MDAwIiwiYXNzZXQiOiIweDgzMzU4OWZDRDZlRGI2RTA4ZjRjN0MzMkQ0ZjcxYjU0YmRBMDI5MTMiLCJwYXlUbyI6IjB4RjJBNjQxNkVCYjBDNTk0QWIyOTc3Njk1YkVEMDYxNzI5ZGRFYjQ3YiIsIm1heFRpbWVvdXRTZWNvbmRzIjozMDAsImV4dHJhIjp7Im5hbWUiOiJVU0QgQ29pbiIsInZlcnNpb24iOiIyIn19LHsic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoic29sYW5hOjVleWt0NFVzRnY4UDhOSmRUUkVwWTF2enFLcVpLdmRwIiwiYW1vdW50IjoiNTAwMCIsImFzc2V0IjoiRVBqRldkZDVBdWZxU1NxZU0ycU4xeHp5YmFwQzhHNHdFR0drWnd5VER0MXYiLCJwYXlUbyI6IjZuWlFKY1RSV202VlF3YTdUZzFKQlVHak56bnZpUzlmRXhVSGI1M1RCM0dHIiwibWF4VGltZW91dFNlY29uZHMiOjMwMCwiZXh0cmEiOnsiZmVlUGF5ZXIiOiJCRU5yTG9VYm5keG9OTVVTNUpYQXBHTXROeWtMakZYWGl4TXRwRHdEUjlTUCJ9fV0sImV4dGVuc2lvbnMiOnsiYmF6YWFyIjp7ImluZm8iOnsiaW5wdXQiOnsidHlwZSI6Imh0dHAiLCJxdWVyeVBhcmFtcyI6eyJxIjoi44OI44Oo44K/6Ieq5YuV6LuKIiwicHJlZmVjdHVyZSI6IuaEm+efpeecjCJ9LCJtZXRob2QiOiJHRVQifSwib3V0cHV0Ijp7InR5cGUiOiJqc29uIiwiZXhhbXBsZSI6eyJxdWVyeSI6eyJ0eXBlIjoibmFtZSIsInZhbHVlIjoi44OI44Oo44K/6Ieq5YuV6LuKIiwibm9ybWFsaXplZCI6IuODiOODqOOCv+iHquWLlei7iiIsInByZWZlY3R1cmUiOiLmhJvnn6XnnIwifSwibWF0Y2hUeXBlIjoiZXhhY3QiLCJmb3VuZCI6MSwicmVzdWx0cyI6W3siY29ycG9yYXRlTnVtYmVyIjoiMTE4MDMwMTAxODc3MSIsIm5hbWUiOiLjg4jjg6jjgr/oh6rli5Xou4rmoKrlvI/kvJrnpL4iLCJraW5kIjp7ImphIjoi5qCq5byP5Lya56S+IiwiZW4iOiJLYWJ1c2hpa2kgS2Fpc2hhIChzdG9jayBjb21wYW55KSJ9LCJhZGRyZXNzIjp7InBvc3RDb2RlIjoiNDcxODU3MSIsInByZWZlY3R1cmUiOiLmhJvnn6XnnIwiLCJjaXR5Ijoi6LGK55Sw5biCIiwic3RyZWV0Ijoi44OI44Oo44K/55S6MeeVquWcsCJ9LCJzdGF0dXMiOiJhY3RpdmUiLCJjbG9zZURhdGUiOm51bGwsImxhc3RVcGRhdGUiOiIyMDI2LTA2LTMwIn1dfX19LCJzY2hlbWEiOnsiJHNjaGVtYSI6Imh0dHBzOi8vanNvbi1zY2hlbWEub3JnL2RyYWZ0LzIwMjAtMTIvc2NoZW1hIiwidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsiaW5wdXQiOnsidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsidHlwZSI6eyJ0eXBlIjoic3RyaW5nIiwiY29uc3QiOiJodHRwIn0sIm1ldGhvZCI6eyJ0eXBlIjoic3RyaW5nIiwiZW51bSI6WyJHRVQiXX0sInF1ZXJ5UGFyYW1zIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7InEiOnsidHlwZSI6InN0cmluZyIsImRlc2NyaXB0aW9uIjoiQ29tcGFueSBuYW1lIChKYXBhbmVzZSkgb3IgMTMtZGlnaXQgY29ycG9yYXRlIG51bWJlciJ9LCJwcmVmZWN0dXJlIjp7InR5cGUiOiJzdHJpbmciLCJkZXNjcmlwdGlvbiI6Ik9wdGlvbmFsIHByZWZlY3R1cmUgZmlsdGVyIChlLmcuIOadseS6rOmDvSkifSwibGltaXQiOnsidHlwZSI6Im51bWJlciIsImRlc2NyaXB0aW9uIjoiTWF4IHJlc3VsdHMgKGRlZmF1bHQgMTAsIG1heCAyNSkifX0sInJlcXVpcmVkIjpbInEiXX19LCJyZXF1aXJlZCI6WyJ0eXBlIiwibWV0aG9kIl0sImFkZGl0aW9uYWxQcm9wZXJ0aWVzIjpmYWxzZX0sIm91dHB1dCI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJ0eXBlIjp7InR5cGUiOiJzdHJpbmcifSwiZXhhbXBsZSI6eyJ0eXBlIjoib2JqZWN0In19LCJyZXF1aXJlZCI6WyJ0eXBlIl19fSwicmVxdWlyZWQiOlsiaW5wdXQiXX19fX0=",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=srA%2BFSWadU5y9eVbxGBCENNl2k1NKuW4Wi9eMWWOId7oxXH%2B%2BlqGgDtmVEi0KneMlRxtNw86AXbFzp9%2Bis1S1MgGbrzWukQ2F75Fqr%2BFATDCTOrtF%2B9GpF35OX%2BSDXseegKbvuFrw1kn23DAAKBGqWowhA%3D%3D\"}]}"
+  },
+  "decoded_challenge": {
+    "x402Version": 2,
+    "error": "Payment required",
+    "resource": {
+      "url": "https://kaisha-api.hp-vladic.workers.dev/resolve",
+      "description": "Resolve a Japanese company to its official registry record: 13-digit corporate number (æ³äººçªå·), canonical registered name, head-office address, entity type, and active/closed status. Query by name (fuzzy normalization: legal-form words, zenkaku/hankaku and kana variants are handled) or by corporate number. Source: National Tax Agency corporate number registry, all ~5M registered corporations in Japan.",
+      "mimeType": "application/json",
+      "serviceName": "Kaisha â Japan Company Registry API",
+      "tags": [
+        "japan",
+        "company",
+        "registry",
+        "kyc",
+        "corporate-number",
+        "business-data"
+      ]
+    },
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "amount": "5000",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "payTo": "0xF2A6416EBb0C594Ab2977695bED061729ddEb47b",
+        "maxTimeoutSeconds": 300,
+        "extra": {
+          "name": "USD Coin",
+          "version": "2"
+        }
+      },
+      {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "amount": "5000",
+        "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "payTo": "6nZQJcTRWm6VQwa7Tg1JBUGjNznviS9fExUHb53TB3GG",
+        "maxTimeoutSeconds": 300,
+        "extra": {
+          "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP"
+        }
+      }
+    ],
+    "extensions": {
+      "bazaar": {
+        "info": {
+          "input": {
+            "type": "http",
+            "queryParams": {
+              "q": "ãã¨ã¿èªåè»",
+              "prefecture": "æç¥ç"
+            },
+            "method": "GET"
+          },
+          "output": {
+            "type": "json",
+            "example": {
+              "query": {
+                "type": "name",
+                "value": "ãã¨ã¿èªåè»",
+                "normalized": "ãã¨ã¿èªåè»",
+                "prefecture": "æç¥ç"
+              },
+              "matchType": "exact",
+              "found": 1,
+              "results": [
+                {
+                  "corporateNumber": "1180301018771",
+                  "name": "ãã¨ã¿èªåè»æ ªå¼ä¼ç¤¾",
+                  "kind": {
+                    "ja": "æ ªå¼ä¼ç¤¾",
+                    "en": "Kabushiki Kaisha (stock company)"
+                  },
+                  "address": {
+                    "postCode": "4718571",
+                    "prefecture": "æç¥ç",
+                    "city": "è±ç°å¸",
+                    "street": "ãã¨ã¿çº1çªå°"
+                  },
+                  "status": "active",
+                  "closeDate": null,
+                  "lastUpdate": "2026-06-30"
+                }
+              ]
+            }
+          }
+        },
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "input": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "http"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ]
+                },
+                "queryParams": {
+                  "type": "object",
+                  "properties": {
+                    "q": {
+                      "type": "string",
+                      "description": "Company name (Japanese) or 13-digit corporate number"
+                    },
+                    "prefecture": {
+                      "type": "string",
+                      "description": "Optional prefecture filter (e.g. æ±äº¬é½)"
+                    },
+                    "limit": {
+                      "type": "number",
+                      "description": "Max results (default 10, max 25)"
+                    }
+                  },
+                  "required": [
+                    "q"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "method"
+              ],
+              "additionalProperties": false
+            },
+            "output": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "example": {
+                  "type": "object"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "required": [
+            "input"
+          ]
+        }
+      }
+    }
+  },
+  "x402_version": 2,
+  "v2_shape": true
+}

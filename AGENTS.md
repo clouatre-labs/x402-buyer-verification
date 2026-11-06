@@ -2,18 +2,17 @@
 
 ## Project overview
 
-<!-- One paragraph: what this repo does, who uses it, primary language/framework. -->
-<!-- Example: "Rust MCP server for code structure analysis using tree-sitter" -->
+This repository hosts buyer-side x402 (HTTP 402 payments) verification experiments on the Base network. Each experiment is pre-registered via a `protocol.md` before it runs; raw outputs land under `experiments/<slug>/data/` and each run record validates against `validate_schema.py` in CI. The primary users are engineers evaluating x402 seller endpoints from the buyer side.
 
 ## Stack & Commands
 
-<!-- Fill in: language/runtime, package manager, key frameworks -->
+TypeScript run via Bun; Python only for schema validation (`uv run`). Dependencies: `@x402/fetch@2.29.0`, `@x402/evm@2.29.0`, `viem`.
 
 ```
-# build:  <fill in>
-# test:   <fill in>
-# lint:   <fill in>
-# format: <fill in>
+# build:  bun install
+# test:   bun test
+# lint:   bunx markdownlint-cli2 "**/*.md" ; uv run python validate_schema.py --self-test
+# format: bunx biome format (if configured)
 ```
 
 ## Labels and Milestones

@@ -1,0 +1,74 @@
+{
+  "experiment": "echo-verify",
+  "schema_version": "1.0.0",
+  "record_type": "payment-run",
+  "title": "Buyer-side x402 v2 echo endpoint verification with dual-RPC settlement assertion",
+  "issue": "1",
+  "date": "2026-11-06",
+  "model": "none",
+  "n_per_group": 1,
+  "control_condition": "unpaid discovery and decode (no settlement)",
+  "treatment_condition": "paid settlement of the issued challenge via x402Client + ExactEvmScheme",
+  "rubric_version": "echo-verify-v1",
+  "orchestrator_session": null,
+  "repo_head": "be5ab7caba04e173d401155fdacce615bb95a46f",
+  "experiment_start": "2026-11-06T20:32:42Z",
+  "experiment_end": "2026-11-06T20:33:15Z",
+  "analyzed_at": "2026-11-06T20:34:00Z",
+  "versions": {
+    "bun": "1.4.0",
+    "node": "26.13.0",
+    "x402_fetch": "2.29.0",
+    "x402_evm": "2.29.0"
+  },
+  "rpc_endpoints": ["https://mainnet.base.org", "https://base.publicnode.com"],
+  "runs": {
+    "paid_run": {
+      "mode": "happy-path",
+      "settled": true,
+      "tx_hash": "0xa3143d32319392227c017ce86dceb2a8e377b7e4f32c21f2693a6925e91f201c",
+      "payer": "0xd0D40C485C6878DF38485E71bcc0Ad95Fb97FA5E",
+      "pay_to": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+      "amount_usdc": 0.01,
+      "receipt": {
+        "success": true,
+        "transaction": "0xa3143d32319392227c017ce86dceb2a8e377b7e4f32c21f2693a6925e91f201c"
+      },
+      "wall_clock_seconds": 1.11,
+      "note": "receipt and Transfer event verified on both RPCs; tx.from is the Coinbase facilitator 0xb87e1a2cc2b4643f2892768e80e41167f17c5860"
+    },
+    "decode_only": {
+      "mode": "decode-only",
+      "settled": false,
+      "tx_hash": null,
+      "payer": "0xd0D40C485C6878DF38485E71bcc0Ad95Fb97FA5E",
+      "pay_to": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+      "amount_usdc": 0,
+      "receipt": null,
+      "wall_clock_seconds": 0.039,
+      "note": "unpaid POST returned 402 with valid v2 PAYMENT-REQUIRED; latency median over 15 discovery GETs = 0.0388 s, IQR 0.0315-0.0393 s (descriptive only)"
+    }
+  },
+  "scores": {
+    "paid_run": {
+      "pass": true,
+      "receipt_keys_present": true,
+      "transfer_from_is_payer_both_rpcs": true,
+      "transfer_to_is_pay_to_both_rpcs": true,
+      "exact_amount_base_units": "10000",
+      "block_height_in_window": true
+    },
+    "decode_only": {
+      "pass": true,
+      "x402_version": 2,
+      "base64url_header_decoded": true
+    }
+  },
+  "statistical_test": "descriptive-only",
+  "conclusion": "All assertions passed: settlement settled 0.01 USDC exactly to the challenge payTo from the local payer per Transfer events on two independent RPCs; challenge decode and v2 shape validated.",
+  "pre_acknowledged_limitations": [
+    "single irreversible settlement, not repeated",
+    "free RPC receipt lag mitigated only by backoff polling",
+    "timings are descriptive statistics, not performance claims"
+  ]
+}

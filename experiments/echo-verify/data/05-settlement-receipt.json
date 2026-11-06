@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "payer": "0xd0D40C485C6878DF38485E71bcc0Ad95Fb97FA5E",
+  "transaction": "0xa3143d32319392227c017ce86dceb2a8e377b7e4f32c21f2693a6925e91f201c",
+  "network": "eip155:8453",
+  "settledAmountUsdc": "0.01",
+  "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "explorerUrl": "https://basescan.org/tx/0xa3143d32319392227c017ce86dceb2a8e377b7e4f32c21f2693a6925e91f201c"
+}

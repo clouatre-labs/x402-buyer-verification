@@ -1,0 +1,45 @@
+{
+  "stage": "full",
+  "payer": "0xd0D40C485C6878DF38485E71bcc0Ad95Fb97FA5E",
+  "payTo": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+  "amount_base_units": "10000",
+  "tx_hash": "0xa3143d32319392227c017ce86dceb2a8e377b7e4f32c21f2693a6925e91f201c",
+  "tx_from_is_facilitator": true,
+  "transfer_from_matches_payer_on_both_rpcs": true,
+  "block_at_decode": 54034089,
+  "block_height_window": [
+    54034088,
+    54034098
+  ],
+  "primary_rpc": {
+    "rpc": "https://mainnet.base.org",
+    "found": true,
+    "errors": [],
+    "blockNumber": 54034097,
+    "txFrom": "0xb87e1a2cc2b4643f2892768e80e41167f17c5860",
+    "from": "0xd0d40c485c6878df38485e71bcc0ad95fb97fa5e",
+    "to": "0x169313d28075a6ddb70e7e5190a1eddc0d105671",
+    "valueBaseUnits": "10000"
+  },
+  "secondary_rpc": {
+    "rpc": "https://base.publicnode.com",
+    "found": true,
+    "errors": [],
+    "blockNumber": 54034097,
+    "txFrom": "0xb87e1a2cc2b4643f2892768e80e41167f17c5860",
+    "from": "0xd0d40c485c6878df38485e71bcc0ad95fb97fa5e",
+    "to": "0x169313d28075a6ddb70e7e5190a1eddc0d105671",
+    "valueBaseUnits": "10000"
+  },
+  "latency_seconds": {
+    "n": 15,
+    "median": 0.038839458000000035,
+    "iqr": [
+      0.03147983400000004,
+      0.03933277100000001
+    ]
+  },
+  "paid_http_status": 200,
+  "asserts_passed": true,
+  "ran_at": "2026-11-06T20:33:15.504Z"
+}
