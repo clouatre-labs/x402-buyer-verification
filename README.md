@@ -122,7 +122,7 @@ See [CITATION.cff](CITATION.cff) or:
 
 ```bibtex
 @dataset{clouatre2026x402buyerverification,
-  title  = {x402-buyer-verification: buyer-side verification of x402 v2 payments on Base},
+  title  = {x402 Buyer Verification},
   author = {Clouâtre, Hugues},
   year   = {2026},
   doi    = {10.5281/zenodo.24024416},

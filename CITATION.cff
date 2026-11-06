@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this dataset, please cite it using the metadata below."
 type: dataset
-title: "x402-buyer-verification: buyer-side verification of x402 v2 payments on Base"
+title: "x402 Buyer Verification"
 authors:
   - family-names: "Clouâtre"
     given-names: "Hugues"
