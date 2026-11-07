@@ -2,6 +2,7 @@
   <a href="https://github.com/clouatre-labs/x402-buyer-verification/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Apache--2.0-blue.svg?style=for-the-badge" height="20"></a>
   <a href="https://conventionalcommits.org"><img alt="Conventional Commits" src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge" height="20"></a>
   <a href="RESULTS.md"><img alt="Results" src="https://img.shields.io/badge/results-4of4__failures__detected__%7C__2of3__endpoints__v2-orange?style=for-the-badge" height="20"></a>
+  <a href="https://doi.org/10.5281/zenodo.24024416"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.24024416.svg" height="20"></a>
 </p>
 
 <h1 align="center">x402-buyer-verification</h1>
@@ -117,5 +118,16 @@ uv run --with matplotlib figures/fig1-discovery-latency.py
 
 ## Citing This Work
 
-See [CITATION.cff](CITATION.cff). A Zenodo DOI is deferred; cite the
-repository and version 1.0.0 for now.
+See [CITATION.cff](CITATION.cff) or:
+
+```bibtex
+@dataset{clouatre2026x402buyerverification,
+  title  = {x402 Buyer Verification},
+  author = {Clouâtre, Hugues},
+  year   = {2026},
+  doi    = {10.5281/zenodo.24024416},
+  note   = {All versions. Latest version DOI: \url{https://doi.org/10.5281/zenodo.24024417}}
+}
+```
+
+Dataset archived at Zenodo (concept DOI): [10.5281/zenodo.24024416](https://doi.org/10.5281/zenodo.24024416); latest version: [10.5281/zenodo.24024417](https://doi.org/10.5281/zenodo.24024417).

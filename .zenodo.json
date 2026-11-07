@@ -1,31 +1,48 @@
 {
-  "title": "{{TITLE}}",
-  "description": "TODO: One-paragraph description of the dataset and associated experiments. Replace this placeholder before first release.",
+  "title": "x402 Buyer Verification",
+  "description": "<p>Supplementary dataset for three pre-registered buyer-side experiments verifying x402 v2 payments on Base mainnet, executed as scripted protocol runs and committed regardless of outcome; every reported number traces to a committed <code>analysis.json</code> and raw artifacts under <code>experiments/</code>.</p>\n\n<h2>Experiment 1: echo-verify</h2>\n<p>A fresh USD 0.01 mainnet happy-path settlement, verified end-to-end via payer-anchored Transfer events on two independent RPCs (paid run 1.11 s; discovery median 0.0388 s over 15 GETs; tx <code>0xa3143d32319392227c017ce86dceb2a8e377b7e4f32c21f2693a6925e91f201c</code>).</p>\n<ul>\n<li><strong>Headline finding:</strong> exactly 0.01 USDC settled to payTo per Transfer events on both RPCs.</li>\n</ul>\n\n<h2>Experiment 2: mock-seller</h2>\n<p>Hostile-seller failure-mode detection, including a same-nonce EIP-3009 replay on an Anvil fork pinned at block 54035433.</p>\n<ul>\n<li><strong>Headline finding:</strong> 4 of 4 hostile-seller failure modes were correctly detected; the replay reverted at EVM state level with <code>FiatTokenV2: authorization is used or canceled</code>.</li>\n</ul>\n\n<h2>Experiment 3: preflight-external</h2>\n<p>Decode-only compatibility probing of third-party x402 endpoints, with a hard no-payment guard: zero payment-bearing headers sent, guard trips on 0 paid requests.</p>\n<ul>\n<li><strong>Headline finding:</strong> 2 of 3 third-party endpoints returned protocol-compatible v2 402 challenges; agent402.tools diverged with a 404.</li>\n</ul>\n\n<h2>Contents</h2>\n<ul>\n<li><code>experiments/</code> &mdash; pre-registered protocols, runners, run records, verbatim raw API artifacts and on-chain receipts</li>\n<li><code>results/</code>, <code>RESULTS.md</code>, <code>METHODOLOGY.md</code>, <code>DATA_DICTIONARY.md</code> &mdash; per-experiment reports, record schema</li>\n<li><code>figures/</code>, <code>recipe/</code> &mdash; frozen figure recipes and rendered figures</li>\n</ul>\n\n<p>Disclosure: the operator is affiliated with aptu.dev; Experiment 1 verifies the operator's own endpoint. Findings are about verification of the x402 protocol, not any product.</p>",
   "upload_type": "dataset",
   "access_right": "open",
-  "license": "Apache-2.0",
-  "version": "{{VERSION}}",
-  "publication_date": "{{RELEASE_DATE}}",
+  "license": "apache2.0",
+  "language": "eng",
+  "version": "1.0.0",
+  "publication_date": "2026-11-06",
   "creators": [
     {
-      "name": "{{AUTHOR_FAMILY_NAMES}}, {{AUTHOR_GIVEN_NAMES}}",
-      "orcid": "{{ORCID}}"
+      "name": "Clouâtre, Hugues",
+      "affiliation": "Université de Bordeaux",
+      "orcid": "0009-0002-4291-1999"
     }
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/clouatre-labs/{{REPO_NAME}}",
-      "relation": "isIdenticalTo",
-      "resource_type": "software"
+      "identifier": "https://github.com/clouatre-labs/x402-buyer-verification",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://clouatre.ca/posts/verify-x402-endpoints",
+      "relation": "references",
+      "resource_type": "publication-other",
+      "scheme": "url"
     }
   ],
   "keywords": [
     "llm-agents",
     "pre-registered-experiment",
+    "preregistration",
     "reproducibility",
-    "llm-evaluation"
+    "measurement",
+    "payments",
+    "x402",
+    "stablecoin",
+    "usdc",
+    "base",
+    "eip-3009",
+    "buyer-protection"
   ],
   "custom": {
-    "code:codeRepository": "https://github.com/clouatre-labs/{{REPO_NAME}}"
+    "code:codeRepository": "https://github.com/clouatre-labs/x402-buyer-verification"
   }
 }

@@ -1,15 +1,25 @@
 cff-version: 1.2.0
 message: "If you use this dataset, please cite it using the metadata below."
 type: dataset
-title: "x402-buyer-verification: buyer-side verification of x402 v2 payments on Base"
+title: "x402 Buyer Verification"
 authors:
   - family-names: "Clouâtre"
     given-names: "Hugues"
     email: "hugues@linux.com"
+    orcid: "https://orcid.org/0009-0002-4291-1999"
+    affiliation: "Université de Bordeaux"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24024416
+    description: Zenodo dataset DOI (all versions)
+  - type: doi
+    value: 10.5281/zenodo.24024417
+    description: Zenodo dataset DOI (v1.0.0)
 repository-code: https://github.com/clouatre-labs/x402-buyer-verification
 license: Apache-2.0
 date-released: "2026-11-06"
 version: "1.0.0"
+doi: 10.5281/zenodo.24024417
 abstract: >
   Committed data and analysis for three pre-registered buyer-side
   experiments verifying x402 v2 payments on Base. A fresh $0.01 mainnet
