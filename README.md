@@ -9,6 +9,8 @@
 
 ## For blog readers
 
+This work is written up at [Verify x402 endpoints](https://clouatre.ca/posts/verify-x402-endpoints/).
+
 We verified x402 v2 payment settlement and hostile-seller detection on Base. Two
 on-chain traces back this work: a fresh $0.01 USDC settlement from this repo's
 Experiment 1 on 2026-11-06
