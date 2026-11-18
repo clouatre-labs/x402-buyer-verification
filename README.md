@@ -120,16 +120,6 @@ uv run --with matplotlib figures/fig1-discovery-latency.py
 
 ## Citing This Work
 
-See [CITATION.cff](CITATION.cff) or:
-
-```bibtex
-@dataset{clouatre2026x402buyerverification,
-  title  = {x402 Buyer Verification},
-  author = {Clouâtre, Hugues},
-  year   = {2026},
-  doi    = {10.5281/zenodo.24024416},
-  note   = {All versions. Latest version DOI: \url{https://doi.org/10.5281/zenodo.24024417}}
-}
-```
+If you cite this work, see [CITATION.cff](CITATION.cff) or:
 
 Dataset archived at Zenodo (concept DOI): [10.5281/zenodo.24024416](https://doi.org/10.5281/zenodo.24024416); latest version: [10.5281/zenodo.24024417](https://doi.org/10.5281/zenodo.24024417).
