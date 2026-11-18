@@ -16,6 +16,7 @@ identifiers:
     value: 10.5281/zenodo.24024417
     description: Zenodo dataset DOI (v1.0.0)
 repository-code: https://github.com/clouatre-labs/x402-buyer-verification
+url: https://clouatre.ca/posts/verify-x402-endpoints/
 license: Apache-2.0
 date-released: "2026-11-06"
 version: "1.0.0"
