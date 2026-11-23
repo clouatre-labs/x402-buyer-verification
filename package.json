@@ -4,7 +4,7 @@
   "type": "module",
   "devDependencies": {
     "@types/bun": "1.4.5",
-    "typescript": "5.9.3"
+    "typescript": "7.0.2"
   },
   "dependencies": {
     "@x402/evm": "2.31.0",
